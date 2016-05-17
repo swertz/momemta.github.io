@@ -20,7 +20,7 @@ You first need to install MoMEMta. A guide on how-to install from source is avai
 
 # Usage example
 
-```c++
+```cpp
 #include <momemta/ConfigurationReader.h>
 #include <momemta/Logging.h>
 #include <momemta/MoMEMta.h>
