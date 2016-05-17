@@ -233,11 +233,18 @@ a {
     .site-footer {
       font-size: 0.9rem; } }
 
+.site-footer-ack {
+  display: block;
+  color: #819198 }
+
 .site-footer-owner {
   display: block;
   font-weight: bold; }
 
 .site-footer-credits {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  float: right;
   color: #819198; }
 
 .site-footer-logos {
