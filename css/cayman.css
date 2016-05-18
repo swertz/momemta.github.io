@@ -249,9 +249,17 @@ a {
 
 .site-footer-logos {
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 2rem;
     padding: 0;
     width: 50%;
     display: flex;
-    justify-content: space-between;
-}
+    justify-content: space-around; }
+  @media screen and (min-width: 64em) {
+    .site-footer-logos {
+      width: 60%; } }
+  @media screen and (min-width: 42em) and (max-width: 64em) {
+    .site-footer-logos {
+      width: 80%; } }
+  @media screen and (max-width: 42em) {
+    .site-footer-logos {
+      width: 100%; } }
