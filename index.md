@@ -31,10 +31,10 @@ int main(int argc, char** argv) {
     ConfigurationReader configuration("tt_fullyleptonic.lua");
     MoMEMta weight(configuration.freeze());
 
-    LorentzVector p3(16.171895980835, -13.7919054031372, -3.42997527122497, 21.5293197631836);
-    LorentzVector p4(-55.7908325195313, -111.59294128418, -122.144721984863, 174.66259765625);
-    LorentzVector p5(-18.9018573760986, 10.0896110534668, -0.602926552295686, 21.4346446990967);
-    LorentzVector p6(71.3899612426758, 96.0094833374023, -77.2513122558594, 142.492813110352);
+    LorentzVector p3(16.17, -13.79, -3.43, 21.53);
+    LorentzVector p4(-55.79, -111.59, -122.14, 174.66);
+    LorentzVector p5(-18.90, 10.09, -0.60, 21.43);
+    LorentzVector p6(71.39, 96.01, -77.25, 142.50);
 
     std::vector<std::pair<double, double>> weights = weight.computeWeights({p3, p4, p5, p6});
 
