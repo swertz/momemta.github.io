@@ -1,6 +1,10 @@
-# How to install MoMEMta
+# Getting started
 
-## Prerequisites
+## The Matrix Element method
+
+## How to install MoMEMta
+
+### Prerequisites
 
 MoMEMta depends on the following libraries and tools:
 
@@ -12,7 +16,7 @@ MoMEMta depends on the following libraries and tools:
 
 **Note**: MoMEMta has only been tested on GNU/Linux.
 
-## Compilation
+### Compilation
 
 Retrieve the code on [our github repository](https://github.com/MoMEMta/MoMEMta/releases). Unpack the archive and / or go to the `MoMEMta` directory. Next, execute the following:
 ```
@@ -28,7 +32,7 @@ If you have admin rights on your system, you can make MoMEMta (public headers an
 make install
 ```
 
-## Build options
+### Build options
 
 The following options are available when configuring the build (when running `cmake ..`):
 
