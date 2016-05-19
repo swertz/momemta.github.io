@@ -1,59 +1,30 @@
-# Jekyll Cayman theme
+# MoMEMta website
 
-This is a [Jekyll][1] theme for [@jasonlong][2]'s [Cayman theme][4] on [GitHub Pages][3].
+## How to use it
 
-Cayman is a clean, responsive theme for [GitHub Pages](https://pages.github.com). This theme is available as an option if you use the [Automatic Page Generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator/) or you can copy the template and styles to use on your own.
+The website is generated with [mkdocs](http://www.mkdocs.org). Main configuration file is `mkdocs.yml`. In order to generate the documentation, you first need to install mkdocs. Follow the official instructions for that: http://www.mkdocs.org/#installation
 
-You can preview the theme at http://jasonlong.github.io/cayman-theme or with real content at http://jasonlong.github.io/geo_pattern.
-
-![](http://cl.ly/image/1T3r3d18311V/content)
-
-# How to use it?
-
-Download the theme @ http://github.com/pietromenna/jekyll-cayman-theme/archive/master.zip
-
-Unzip it and use it as a regular jekyll folder.
+You also need to checkout some submodules (like the theme we use):
 
 ```
-$ unzip master.zip
+git submodule init
+git submodule update
 ```
 
-Get inside the newly extracted folder
-```
-$ cd jekyll-cayman-theme
-```
+## Write documentation
 
-Get the required gems
-```
-$ bundle install
-```
+Simply add some files in the `docs` folder, in Markdown and add the page in the `mkdocs.yml` file. That's all!
 
-Use it!
+## Preview the website
 
-```
-$ jekyll serve
-```
+Run `mkdocs serve` and access the website on http://127.0.0.1:8000. The page is automatically refreshed when you add or modify any file!
 
-For more details read about [Jekyll][1] on its web page.
+## Deploy the website
 
-# Setup
+You can then deploy the website on github pages when you are happy with your changes.
 
-Some important configuration can be done in the file `_config.yml`. Please, check the Setup section in that file.
+**Note**: this will detroy the old version of the website, so be extremely careful on what you execute.
 
-
-## baseurl
-
-`baseurl` parameter is required in the case the site doesn't sit on the root of the domain. For example: http://pietromenna.github.io/jekyll-cayman-theme
-
-In the case above the baseurl should be set to "/jekyll-cayman-theme".
-
-In the case the site sits in the root, you can leave `baseurl` as empty "".
-
-# License
-
-This work is licensed under a [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
-
-[1]: http://jekyllrb.com/
-[2]: https://github.com/jasonlong
-[3]: http://pages.github.com/
-[4]: https://github.com/jasonlong/cayman-theme
+ 1. If you forked and clone the main repository, you need to define the `upstream` remote: `git remote add upstream git@github.com:MoMEMta/momemta.github.io.git`. If you did not, then you'll need to use `origin` instead of `upstream` in the next commands
+ 2. Deploy the website: `mkdocs gh-deploy -c -r upstream -b master`
+ 3. Enjoy: http://momemta.github.io/

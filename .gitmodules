@@ -1,0 +1,4 @@
+[submodule "mkdocs-material"]
+	path = mkdocs-material
+	url = https://github.com/MoMEMta/mkdocs-material.git
+	branch = momemta
