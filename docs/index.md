@@ -1,8 +1,3 @@
----
-layout: default
-title: {{ site.name }}
----
-
 # The MoMEMta project
 
 **MoMEMta** is a software package designed in a modular way to cover the needs of the experimental analysis workflows at the LHC. MoMEMta provides working examples for the most common final states (ttbar, WW, ...). If you are expert user, be prepared to feel the freedom of configure your MEM computation at all levels.
@@ -14,11 +9,11 @@ MoMEMta is based on:
  - External PDFs (LHAPDF by default)
  - External Matrix Element (provided with MadGraph C++ exporter)
 
-# Getting started
+## Getting started
 
 You first need to install MoMEMta. A guide on how-to install from source is available [on our github repository](https://github.com/MoMEMta/MoMEMta/blob/prototype/README.md#install). You can then browse our [documentation](http://momemta.github.io/MoMEMta/) to learn more about MoMEMta.
 
-# Usage example
+## Usage example
 
 ```cpp
 #include <momemta/ConfigurationReader.h>
@@ -46,7 +41,7 @@ int main(int argc, char** argv) {
 
 More examples can be found [here](https://github.com/MoMEMta/MoMEMta/tree/prototype/examples).
 
-# Our team
+## Our team
 
  - Sébastien Brochet
  - Alessia Saggio

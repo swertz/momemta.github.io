@@ -1,0 +1,31 @@
+site_name: MoMEMta
+site_description: 'Modular Matrix Element Method implementation'
+site_author: 'The MoMEMta team'
+site_url: 'https://momemta.github.io'
+site_dir: _site
+
+extra:
+  version: '0.1.0'
+  palette:
+    primary: 'blue grey'
+    accent: 'teal'
+  links:
+    'Technical documentation': 'https://momemta.github.io/MoMEMta/'
+    'Contact us': mailto:momemta-contact@cern.ch
+
+repo_name: 'GitHub'
+repo_url: 'https://github.com/MoMEMta/MoMEMta'
+ 
+theme_dir: 'mkdocs-material/material'
+
+# Extensions
+markdown_extensions:
+  - codehilite(css_class=code)
+  - admonition
+  - toc:
+      permalink: '#'
+
+pages:
+  - MoMEMta: index.md
+  - Getting started:
+    - 'Installation': 'getting-started/installation.md'
