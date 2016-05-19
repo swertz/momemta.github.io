@@ -1,9 +1,0 @@
-# Setup
-title:        MoMEMta
-tagline:      Modular Matrix Element Method implementation
-baseurl:      ""
-paginate:     1
-
-# Gems
-gems:
-  - jekyll-paginate
