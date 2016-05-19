@@ -4,6 +4,10 @@
 
 The website is generated with [mkdocs](http://www.mkdocs.org). Main configuration file is `mkdocs.yml`. In order to generate the documentation, you first need to install mkdocs. Follow the official instructions for that: http://www.mkdocs.org/#installation
 
+Additional packages are needed:
+
+ - `pip install pymdown-extensions`
+
 You also need to checkout some submodules (like the theme we use):
 
 ```
@@ -20,6 +24,8 @@ If you want to deploy from ingrid instead of your own laptop (why?), you need to
  3. Setup the virtual environment: `virtualenv -p /cvmfs/cp3.uclouvain.be/python/python-2.7.9-sl6_amd64_gcc49/bin/python env`
  4. Activate the virtual env: `source env/bin/activate`. You are now isolated from the rest of ingrid python env, and can install all the software you want.
  5. Install mkdocs: `pip install mkdocs`
+ 6. Install additional packages:
+   - `pip install pymdown-extensions`
  6. You can now perform the `git submodule` operation describe above.
 
 You can exit the virtual environment by executing `deactivate`.

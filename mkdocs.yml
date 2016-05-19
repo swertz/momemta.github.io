@@ -22,8 +22,13 @@ theme_dir: 'mkdocs-material/material'
 markdown_extensions:
   - codehilite(css_class=code)
   - admonition
+  - pymdownx.arithmatex
   - toc:
       permalink: '#'
+
+# MathJax
+extra_javascript:
+  - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML
 
 pages:
   - MoMEMta: index.md
