@@ -46,6 +46,20 @@
             {% include "nav.html" %}
           {% endfor %}
         </ul>
+        {% if config.extra.links %}
+          <hr>
+          <ul>
+          {% for link in config.extra.links %}
+              {% set name = link.keys()[0] %}
+              {% set url = link.values()[0] %}
+              <li>
+                <a href="{{ url }}" target="_blank" title="{{ name }}">
+                    {{ name }}
+                </a>
+              </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
         {% if config.extra.author %}
           <hr>
           <span class="section">The author</span>
@@ -68,20 +82,15 @@
             {% endif %}
           </ul>
         {% endif %}
-        {% if config.extra.links %}
-          <hr>
-          <ul>
-          {% for name in config.extra.links %}
-              {% set url = config.extra.links[name] %}
-              <li>
-                <a href="{{ url }}" target="_blank" title="{{ name }}">
-                    {{ name }}
-                </a>
-              </li>
-          {% endfor %}
-          </ul>
-        {% endif %}
-        <small>This work would not have been possible without the help of the MadWeight team and funding of</small>
+        <span class="section"><small>This work would not have been possible without the help of the MadWeight team and funding of</small></span>
+        <div class="logos">
+          <a href="http://www.uclouvain.be"><img src="{{ base_url }}/assets/images/UCL-dab39722f2.png"></a>
+          <a href="http://cp3.irmp.ucl.ac.be"><img src="{{ base_url }}/assets/images/CP3-1602821e56.png"></a>
+        </div>
+        <div class="logos">
+          <a href="http://www.frs-fnrs.be"><img src="{{ base_url }}/assets/images/FNRS-3f43ef8877.png"></a>
+          <a href="http://www.pd.infn.it/AMVA4NewPhysics"><img src="{{ base_url }}/assets/images/AMVA4-bb51b35e33.png"></a>
+        </div>
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@
         {
             "location": "/", 
             "text": "The MoMEMta project\n#\n\n\nMoMEMta\n is a C++ software package to compute Matrix Element weights. Designed in a modular way, it covers the needs of the experimental analysis workflows at the LHC. MoMEMta provides working examples for the most common final states (\\(\\text{t}\\bar{\\text{t}}\\), WW, \u2026). If you are expert user, be prepared to feel the freedom of configure your MEM computation at all levels.\n\n\nMoMEMta is based on:\n\n\n\n\nC++, ROOT, Lua scripting language\n\n\nCuba library for integration\n\n\nExternal PDFs (LHAPDF by default)\n\n\nExternal Matrix Element (provided with MadGraph C++ exporter)\n\n\n\n\nYou will probably want to start with our \ngetting started guide\n.\n\n\nOur team\n#\n\n\n\n\nS\u00e9bastien Brochet\n\n\nAlessia Saggio\n\n\nMiguel Vidal\n\n\nS\u00e9bastien Wertz", 
-            "title": "MoMEMta"
+            "title": "Main"
         }, 
         {
             "location": "/#the-momemta-project", 
@@ -16,8 +16,28 @@
             "title": "Our team"
         }, 
         {
+            "location": "/introduction/", 
+            "text": "Introduction\n#\n\n\nThe Matrix Element Method\n#\n\n\nMoMEMta\n#", 
+            "title": "MoMEMta"
+        }, 
+        {
+            "location": "/introduction/#introduction", 
+            "text": "", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/introduction/#the-matrix-element-method", 
+            "text": "", 
+            "title": "The Matrix Element Method"
+        }, 
+        {
+            "location": "/introduction/#momemta", 
+            "text": "", 
+            "title": "MoMEMta"
+        }, 
+        {
             "location": "/getting-started/", 
-            "text": "Getting started\n#\n\n\nThe Matrix Element method\n#\n\n\nHow to install MoMEMta\n#\n\n\nPrerequisites\n#\n\n\nMoMEMta depends on the following libraries and tools:\n\n\n\n\nLHAPDF (\n=6)\n\n\nCMake (\n=3.2)\n\n\nBoost (\n=1.54)\n\n\nROOT (\n=5.34.09)\n\n\nA C++11-capable compiler\n\n\n\n\nNote\n: MoMEMta has only been tested on GNU/Linux.\n\n\nCompilation\n#\n\n\nRetrieve the code on \nour github repository\n. Unpack the archive and / or go to the \nMoMEMta\n directory. Next, execute the following:\n\n\nmkdir build\ncd build\ncmake ..\nmake -j 4\n\n\n\n\n\nYou can now use the library \nlibmomemta.so\n with your own code.\n\n\nIf you have admin rights on your system, you can make MoMEMta (public headers and library) available system-wide using:\n\n\nmake install\n\n\n\n\n\nBuild options\n#\n\n\nThe following options are available when configuring the build (when running \ncmake ..\n):\n\n\n\n\n-DCMAKE_INSTALL_PREFIX=(path)\n: Install MoMEMta in a specific location when running \nmake install\n (useful if you don't have admin rights)\n\n\n-DPROFILING=ON\n: Generate debugging symbols and profiling information (requires \ngperftools\n)\n\n\n-DBOOST_ROOT=(path)\n: Use specific Boost library installation\n\n\n-DTESTS=ON\n: Also compile the test executables\n\n\n-DEXAMPLES=OFF\n: Do not compile the example executables", 
+            "text": "Getting started\n#\n\n\nInstallation\n#\n\n\nPrerequisites\n#\n\n\nMoMEMta depends on the following libraries and tools:\n\n\n\n\nLHAPDF (\n=6)\n\n\nCMake (\n=3.2)\n\n\nBoost (\n=1.54)\n\n\nROOT (\n=5.34.09)\n\n\nA C++11-capable compiler\n\n\n\n\nNote\n: MoMEMta has only been tested on GNU/Linux.\n\n\nCompilation\n#\n\n\nRetrieve the code on \nour github repository\n. Unpack the archive and / or go to the \nMoMEMta\n directory. Next, execute the following:\n\n\nmkdir build\ncd build\ncmake ..\nmake -j 4\n\n\n\n\n\nYou can now use the library \nlibmomemta.so\n with your own code.\n\n\nIf you have admin rights on your system, you can make MoMEMta (public headers and library) available system-wide using:\n\n\nmake install\n\n\n\n\n\nBuild options\n#\n\n\nThe following options are available when configuring the build (when running \ncmake ..\n):\n\n\n\n\n-DCMAKE_INSTALL_PREFIX=(path)\n: Install MoMEMta in a specific location when running \nmake install\n (useful if you don't have admin rights)\n\n\n-DPROFILING=ON\n: Generate debugging symbols and profiling information (requires \ngperftools\n)\n\n\n-DBOOST_ROOT=(path)\n: Use specific Boost library installation\n\n\n-DTESTS=ON\n: Also compile the test executables\n\n\n-DEXAMPLES=OFF\n: Do not compile the example executables\n\n\n\n\nUsage\n#\n\n\nExample\n#", 
             "title": "Getting started"
         }, 
         {
@@ -26,14 +46,9 @@
             "title": "Getting started"
         }, 
         {
-            "location": "/getting-started/#the-matrix-element-method", 
+            "location": "/getting-started/#installation", 
             "text": "", 
-            "title": "The Matrix Element method"
-        }, 
-        {
-            "location": "/getting-started/#how-to-install-momemta", 
-            "text": "", 
-            "title": "How to install MoMEMta"
+            "title": "Installation"
         }, 
         {
             "location": "/getting-started/#prerequisites", 
@@ -49,6 +64,26 @@
             "location": "/getting-started/#build-options", 
             "text": "The following options are available when configuring the build (when running  cmake .. ):   -DCMAKE_INSTALL_PREFIX=(path) : Install MoMEMta in a specific location when running  make install  (useful if you don't have admin rights)  -DPROFILING=ON : Generate debugging symbols and profiling information (requires  gperftools )  -DBOOST_ROOT=(path) : Use specific Boost library installation  -DTESTS=ON : Also compile the test executables  -DEXAMPLES=OFF : Do not compile the example executables", 
             "title": "Build options"
+        }, 
+        {
+            "location": "/getting-started/#usage", 
+            "text": "", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/getting-started/#example", 
+            "text": "", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/in-depth/configuration-file/", 
+            "text": "The configuration file\n#", 
+            "title": "Configuration file"
+        }, 
+        {
+            "location": "/in-depth/configuration-file/#the-configuration-file", 
+            "text": "", 
+            "title": "The configuration file"
         }
     ]
 }

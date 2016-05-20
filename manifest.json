@@ -1,7 +1,11 @@
 {
+  "assets/images/AMVA4.png": "assets/images/AMVA4-bb51b35e33.png",
+  "assets/images/CP3.png": "assets/images/CP3-1602821e56.png",
+  "assets/images/FNRS.png": "assets/images/FNRS-3f43ef8877.png",
+  "assets/images/UCL.png": "assets/images/UCL-dab39722f2.png",
   "assets/images/favicon.ico": "assets/images/favicon-e565ddfa3b.ico",
   "assets/javascripts/application.js": "assets/javascripts/application-dfb6964a49.js",
   "assets/javascripts/modernizr.js": "assets/javascripts/modernizr-4a5cc7e01e.js",
-  "assets/stylesheets/application.css": "assets/stylesheets/application-854d31332d.css",
+  "assets/stylesheets/application.css": "assets/stylesheets/application-4e67be2226.css",
   "assets/stylesheets/palettes.css": "assets/stylesheets/palettes-2d6c5d2926.css"
 }
