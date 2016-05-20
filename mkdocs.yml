@@ -10,8 +10,10 @@ extra:
     primary: 'blue grey'
     accent: 'teal'
   links:
-    'Technical documentation': 'https://momemta.github.io/MoMEMta/'
-    'Contact us': mailto:momemta-contact@cern.ch
+    - 'Change log': 'https://momemta.github.io'
+    - 'Roadmap': 'https://trello.com/b/lQXfKafM/momemta-roadmap'
+    - 'Technical documentation': 'https://momemta.github.io/MoMEMta/'
+    - 'Contact us': mailto:momemta-contact@cern.ch
 
 repo_name: 'GitHub'
 repo_url: 'https://github.com/MoMEMta/MoMEMta'
@@ -31,6 +33,8 @@ extra_javascript:
   - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML
 
 pages:
-  - MoMEMta: index.md
+  - Main: index.md
+  - MoMEMta: introduction.md
   - Getting started: 'getting-started.md'
-  - 'Installation': 'getting-started/installation.md'
+  - 'In depth':
+    - 'Configuration file': 'in-depth/configuration-file.md'

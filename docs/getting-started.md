@@ -1,8 +1,6 @@
 # Getting started
 
-## The Matrix Element method
-
-## How to install MoMEMta
+## Installation
 
 ### Prerequisites
 
@@ -41,3 +39,7 @@ The following options are available when configuring the build (when running `cm
    * `-DBOOST_ROOT=(path)`: Use specific Boost library installation
    * `-DTESTS=ON`: Also compile the test executables
    * `-DEXAMPLES=OFF`: Do not compile the example executables
+
+## Usage
+
+## Example

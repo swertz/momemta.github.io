@@ -1,6 +1,6 @@
 # The MoMEMta project
 
-**MoMEMta** is a C++ software package to compute Matrix Element weights. Designed in a modular way, it covers the needs of the experimental analysis workflows at the LHC. MoMEMta provides working examples for the most common final states ($\text{t}\bar{\text{t}}$, WW, ...). If you are expert user, be prepared to feel the freedom of configure your MEM computation at all levels.
+**MoMEMta** is a C++ software package to compute Matrix Element weights. Designed in a modular way, it covers the needs of the experimental analysis workflows at the LHC. MoMEMta provides working examples for the most common final states ($\text{t}\bar{\text{t}}$, WW, …). If you are expert user, be prepared to feel the freedom of configure your MEM computation at all levels.
 
 MoMEMta is based on:
 
