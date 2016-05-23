@@ -24,7 +24,9 @@ theme_dir: 'mkdocs-material/material'
 markdown_extensions:
   - codehilite(css_class=code)
   - admonition
-  - pymdownx.arithmatex
+  - mdx_math:
+      enable_dollar_delimiter: true
+      render_to_span: true
   - toc:
       permalink: '#'
 
