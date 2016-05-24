@@ -259,32 +259,32 @@
               
               
               <li>
-                <a href="" target="_blank" title="">
-                    
+                <a href="https://momemta.github.io" target="_blank" title="Change log">
+                    Change log
                 </a>
               </li>
           
               
               
               <li>
-                <a href="" target="_blank" title="">
-                    
+                <a href="https://trello.com/b/lQXfKafM/momemta-roadmap" target="_blank" title="Roadmap">
+                    Roadmap
                 </a>
               </li>
           
               
               
               <li>
-                <a href="" target="_blank" title="">
-                    
+                <a href="https://momemta.github.io/MoMEMta/" target="_blank" title="Technical documentation">
+                    Technical documentation
                 </a>
               </li>
           
               
               
               <li>
-                <a href="" target="_blank" title="">
-                    
+                <a href="mailto:momemta-contact@cern.ch" target="_blank" title="Contact us">
+                    Contact us
                 </a>
               </li>
           
@@ -311,12 +311,12 @@
           <h1 id="the-configuration-file">The configuration file<a class="headerlink" href="#the-configuration-file" title="Permanent link">#</a></h1>
 <h2 id="configuring-modules">Configuring modules<a class="headerlink" href="#configuring-modules" title="Permanent link">#</a></h2>
 <p>Declaring a module named <code>karl</code> of type <code>Gaussian</code> in Lua is simple:</p>
-<div class="code"><pre>Gaussian.karl = {}
+<div class="code"><pre><span></span>Gaussian.karl = {}
 </pre></div>
 
 
 <p>Each module can be configured by setting its parameters and its inputs:</p>
-<div class="code"><pre><span class="n">Gaussian</span><span class="p">.</span><span class="n">karl</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="code"><pre><span></span><span class="n">Gaussian</span><span class="p">.</span><span class="n">karl</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">Gaussian</span><span class="p">.</span><span class="n">friedrich</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c1">-- Some fixed parameters</span>
     <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span>
@@ -332,13 +332,13 @@
 <p>A <strong>parameter</strong> can be an integer (eg.: <code>2</code>), a floating point number, (eg.: <code>172.5</code>, <code>13000.</code> - note the decimal point <em>must</em> be present), a boolean (<code>true</code> or <code>false</code>) or a string (eg.: <code>hello</code>). Parameters might have default values and be optional, or be mandatory.</p>
 <p>An <strong>input</strong> is set through a so-called "<strong>input tag</strong>" of the form <code>other_module::its_output[/i]</code>, where <code>other_module</code> is the name of another module responsible for producing the quantity <code>its_output</code>, and <code>/i</code> has to be used when the produced quantity in question is a vector and only a specific entry of that vector is needed as input. </p>
 <p>Some modules expect <strong>vectors</strong> of input tags, where the order of the entries may or nor matter. Vectors in Lua are easily declared:</p>
-<div class="code"><pre><span class="c1">-- Take first and third entry of vector output `output` of module `that_module`</span>
+<div class="code"><pre><span></span><span class="c1">-- Take first and third entry of vector output `output` of module `that_module`</span>
 <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;</span><span class="s">that_module::output/1&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">that_module::output/3&quot;</span> <span class="p">}</span>
 </pre></div>
 
 
 <p>Accessing entries of previously defined vectors is also possible:</p>
-<div class="code"><pre><span class="n">temp_vector</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;</span><span class="s">first&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">second&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">third&quot;</span> <span class="p">}</span>
+<div class="code"><pre><span></span><span class="n">temp_vector</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;</span><span class="s">first&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">second&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">third&quot;</span> <span class="p">}</span>
 <span class="c1">-- Use only { &quot;first&quot;, &quot;third&quot; }:</span>
 <span class="n">my_inputs</span> <span class="o">=</span> <span class="p">{</span> <span class="n">temp_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">temp_vector</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">}</span>
 </pre></div>
