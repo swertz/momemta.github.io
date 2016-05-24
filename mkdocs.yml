@@ -40,7 +40,8 @@ extra_css:
 
 pages:
   - Main: index.md
-  - MoMEMta: introduction.md
+  - What is MoMEMta?: introduction.md
   - Getting started: 'getting-started.md'
   - 'In depth':
+    - 'Calling MoMEMta': 'in-depth/calling-momemta.md'
     - 'Configuration file': 'in-depth/configuration-file.md'
