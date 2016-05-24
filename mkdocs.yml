@@ -6,6 +6,7 @@ site_dir: _site
 
 extra:
   version: '0.1.0'
+  logo: 'images/logo.png'
   palette:
     primary: 'blue grey'
     accent: 'teal'
@@ -33,6 +34,9 @@ markdown_extensions:
 # MathJax
 extra_javascript:
   - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML
+
+extra_css:
+  - css/extra.css
 
 pages:
   - Main: index.md
