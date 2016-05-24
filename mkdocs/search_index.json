@@ -104,6 +104,16 @@
             "location": "/in-depth/configuration-file/#default-inputs-outputs-and-parameters", 
             "text": "Some inputs and outputs are not defined by any module  per se  but are used by MoMEMta to pass and retrieve important quantities:  Inputs:    input::particles : Vector of LorentzVectors passed as argument to  computeWeights()    input::met : LorentzVector of the observed MET (optional argument to  computeWeights() )    cuba::ps_points : Vector of doubles between 0 and 1. Phase-space point, ie. set of random numbers launched by Cuba to perform the integration. The length of the vector is the total number of integration dimensions declared by the modules. Instead of manually specifying the  cuba::ps_points/i  input tags, it is possible to use to  getpspoint()  function (which automatically increases \u201ci\u201d each time it is called).    cuba::ps_weight : (double) Weight associated with the phase-space point    Outputs:   integrands : Vector of doubles. This is the value taken to be the integrand, returned to Cuba to compute the integral. Exactly  one  declared module  must  produce this quantity.   Parameters:    cuba    parameters", 
             "title": "Default inputs, outputs and parameters "
+        }, 
+        {
+            "location": "/changelog/", 
+            "text": "v0.1.0\n#\n\n\n\n\nFirst public release of MoMEMta", 
+            "title": "Change log"
+        }, 
+        {
+            "location": "/changelog/#v010", 
+            "text": "First public release of MoMEMta", 
+            "title": "v0.1.0"
         }
     ]
 }

@@ -9,19 +9,19 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>What is MoMEMta? - MoMEMta</title>
+        <title>Change log - MoMEMta</title>
       
       
       
-        <link rel="canonical" href="https://momemta.github.io/introduction/">
+        <link rel="canonical" href="https://momemta.github.io/changelog/">
       
       
         <meta name="author" content="The MoMEMta team">
       
     
-    <meta property="og:url" content="https://momemta.github.io/introduction/">
+    <meta property="og:url" content="https://momemta.github.io/changelog/">
     <meta property="og:title" content="MoMEMta">
-    <meta property="og:image" content="https://momemta.github.io/introduction//../images/logo.png">
+    <meta property="og:image" content="https://momemta.github.io/changelog//../images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MoMEMta">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -100,7 +100,7 @@
             
           </span>
         
-        What is MoMEMta?
+        Change log
       </div>
     </div>
     
@@ -183,30 +183,9 @@
           
             
   <li>
-    <a class="current" title="What is MoMEMta?" href="./">
+    <a class="" title="What is MoMEMta?" href="../introduction/">
       What is MoMEMta?
     </a>
-    
-      
-        
-      
-      
-        <ul>
-          
-            <li class="anchor">
-              <a title="The Matrix Element Method" href="#the-matrix-element-method">
-                The Matrix Element Method
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="MoMEMta" href="#momemta">
-                MoMEMta
-              </a>
-            </li>
-          
-        </ul>
-      
     
   </li>
 
@@ -249,9 +228,22 @@
           
             
   <li>
-    <a class="" title="Change log" href="../changelog/">
+    <a class="current" title="Change log" href="./">
       Change log
     </a>
+    
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="v0.1.0" href="#v010">
+                v0.1.0
+              </a>
+            </li>
+          
+        </ul>
+      
     
   </li>
 
@@ -305,40 +297,12 @@
       <article class="article">
         <div class="wrapper">
           
-          <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h1>
-<h2 id="the-matrix-element-method">The Matrix Element Method<a class="headerlink" href="#the-matrix-element-method" title="Permanent link">#</a></h2>
-<p>The Matrix Element Method (MEM) is a multivariate method in which a per-event likelihood ("weight") is computed from first principles. This weight can be expressed, given a certain theoretical hypothesis, by the convolution of the matrix element (squared) corresponding to this hypothesis, the parton distribution functions, and the transfer functions and efficiencies describing the evolution from a parton-level configuration to the observed event:</p>
-<p>
-<script type="math/tex; mode=display">P(\mathbf{x} | \alpha ) = \frac{1}{A_{\alpha} \sigma_{\alpha}} \int  \text{d} \Phi(y) \frac{\text{d} x_1 \text{d} x_2}{x_1 x_2 s} \, f(x_1) f(x_2) \, |\mathcal{M}_{\alpha}(y,x_1,x_2)|^2 \, W(\mathbf{x}|y) \, \epsilon_{\alpha}(y) \tag{1} \label{MEM}</script>
-</p>
-<p>Where:</p>
+            <h1>Change log</h1>
+          
+          <h2 id="v010">v0.1.0<a class="headerlink" href="#v010" title="Permanent link">#</a></h2>
 <ul>
-<li>
-<p><span class="tex">\(\mathcal{M}_{\alpha}\)</span> is the matrix element (usually LO) under hypothesis <span class="tex">\(\alpha\)</span>.</p>
-</li>
-<li>
-<p>The transfer function <span class="tex">\(W(\mathbf{x}|y)\)</span> is the probability density that <span class="tex">\(y\)</span> ends up as the measured event <span class="tex">\(\mathbf{x}\)</span> in the detector. It describes parton shower, hadronization, and detector and reconstruction effects. It is normalised as <span class="tex">\(\int \text{d} \mathbf{x} \, W(\mathbf{x}|y) = 1\)</span> while the probability that <span class="tex">\(y\)</span> ends up as a selected event is included in the efficiency term <span class="tex">\(\epsilon_{\alpha}(y)\)</span>.</p>
-</li>
-<li>
-<p><span class="tex">\(f\)</span> and <span class="tex">\(x_i\)</span> are the Parton Distribution Functions (PDFs) and Björken-x; <span class="tex">\(\text{d} \Phi(y)\)</span> is the phase-space density term; <span class="tex">\(s\)</span> is the hadronic centre-of-mass energy.</p>
-</li>
-<li>
-<p>The denominator <span class="tex">\(A_{\alpha} \sigma_{\alpha}\)</span>, including the total cross-section of the process <span class="tex">\(\alpha\)</span> and the overall acceptance <span class="tex">\(A_{\alpha}=\langle \epsilon_{\alpha}(y)\rangle\)</span> ensures that <span class="tex">\(P\)</span> is correctly normalised as a likelihood. In some use cases, this normalisation factor can be neglected.</p>
-</li>
+<li>First public release of MoMEMta</li>
 </ul>
-<p>This per-event likelihood has two main analysis use-cases:</p>
-<ul>
-<li>
-<p>Constructing the sample likelihood <span class="tex">\(\mathcal{L}=\prod_{i \in \text{data}} P(\mathbf{x}_i|\alpha)\)</span> and measuring a parameter using the maximum likelihood method</p>
-</li>
-<li>
-<p>Constructing a Neyman-Pearson discriminant <span class="tex">\(P(\mathbf{x}|\alpha)/P(\mathbf{x}|\beta)\)</span> to discriminate a process (signal) against others (backgrounds), useful either for conducting discrete hypothesis testing or for searches for rare processes or New Physics signals</p>
-</li>
-</ul>
-<p>However, computing an integral like (<span class="tex">\(\ref{MEM}\)</span>) is a difficult numerical problem, due to the presence of sharp peaks in the integrand (propagators in the matrix element, transfer functions on angles and energies). Solving it in a reasonable amout of time requires the use of both adaptive Monte-Carlo integration algorithms <em>and</em> smart phase-space parametrisations.</p>
-<h2 id="momemta">MoMEMta<a class="headerlink" href="#momemta" title="Permanent link">#</a></h2>
-<p>MoMEMta is a modular C++ framework designed with the aim to allow a quick and efficient computation of weights under a large number of theoretical hypotheses, while remaining easily configurable by the user, enabling easy interfacing with existing analysis workflows.</p>
-<p>The modularity of MoMEMta consists of configuring the integrand of (<span class="tex">\(\ref{MEM}\)</span>) by linking modules together. A module is responsible for a small part of the computation: transfer functions, phase-space parametrisation, matrix element, …, each module’s output being fed to other modules as input. This configuration is realised by the user through a file written in the Lua scripting language. The integration is then carried out by MoMEMta using the Vegas algorithm as implemented in the Cuba library.</p>
           <aside class="copyright" role="note">
             
             Documentation built with
@@ -355,7 +319,7 @@
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href=".." title="Main">
+        <a href="../in-depth/configuration-file/" title="Configuration file">
           <span class="direction">
             Previous
           </span>
@@ -365,7 +329,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                Main
+                Configuration file
               </div>
             </div>
           </div>
@@ -373,22 +337,6 @@
       
     </div>
     <div class="next">
-      
-        <a href="../getting-started/" title="Getting started">
-          <span class="direction">
-            Next
-          </span>
-          <div class="page">
-            <div class="stretch">
-              <div class="title">
-                Getting started
-              </div>
-            </div>
-            <div class="button button-next" role="button" aria-label="Next">
-              <i class="icon icon-forward"></i>
-            </div>
-          </div>
-        </a>
       
     </div>
   </nav>
