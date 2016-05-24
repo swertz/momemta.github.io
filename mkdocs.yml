@@ -11,7 +11,6 @@ extra:
     primary: 'blue grey'
     accent: 'teal'
   links:
-    - 'Change log': 'https://momemta.github.io'
     - 'Roadmap': 'https://trello.com/b/lQXfKafM/momemta-roadmap'
     - 'Technical documentation': 'https://momemta.github.io/MoMEMta/'
     - 'Contact us': mailto:momemta-contact@cern.ch
@@ -45,3 +44,4 @@ pages:
   - 'In depth':
     - 'Calling MoMEMta': 'in-depth/calling-momemta.md'
     - 'Configuration file': 'in-depth/configuration-file.md'
+  - 'Change log': 'changelog.md'
