@@ -331,7 +331,7 @@
 <p><strong>Note</strong>: MoMEMta has only been tested on GNU/Linux.</p>
 <h3 id="compilation">Compilation<a class="headerlink" href="#compilation" title="Permanent link">#</a></h3>
 <p>Retrieve the code on <a href="https://github.com/MoMEMta/MoMEMta/releases">our github repository</a>. Unpack the archive and / or go to the <code>MoMEMta</code> directory. Next, execute the following:</p>
-<div class="code"><pre><span></span>mkdir build
+<div class="code"><pre>mkdir build
 cd build
 cmake ..
 make -j 4
@@ -340,7 +340,7 @@ make -j 4
 
 <p>You can now use the library <code>libmomemta.so</code> with your own code.</p>
 <p>Finally, you may then make MoMEMta (public headers and library) available system-wide using:</p>
-<div class="code"><pre><span></span>make install
+<div class="code"><pre>make install
 </pre></div>
 
 
@@ -356,7 +356,7 @@ make -j 4
 <h2 id="usage-lua-momemta">Usage: Lua &amp; MoMEMta<a class="headerlink" href="#usage-lua-momemta" title="Permanent link">#</a></h2>
 <p>In MoMEMta, the computation of weights is configured by the user through a small script written in the Lua language. Don’t be scared though: no previous knowledge of Lua is needed to use MoMEMta!</p>
 <p>Computing weights in your analysis code is then a matter of only a few lines of C++: read the Lua file, instantiate MoMEMta, and call it by passing your particle 4-vectors:</p>
-<div class="code"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;momemta/ConfigurationReader.h&gt;</span><span class="cp"></span>
+<div class="code"><pre><span class="cp">#include</span> <span class="cpf">&lt;momemta/ConfigurationReader.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;momemta/Logging.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;momemta/MoMEMta.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;momemta/Utils.h&gt;</span><span class="cp"></span>
@@ -382,7 +382,7 @@ make -j 4
 
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <p>We ship a few example configuration files, along with short scripts computing a single weight: find them in <code>MoMEMta/examples</code>. To run them, simply call them from the <code>build</code> directory:</p>
-<div class="code"><pre><span></span>./tt_fullyleptonic.exe
+<div class="code"><pre>./tt_fullyleptonic.exe
 ./tt_fullyleptonic_NWA.exe
 ./WW_fullyleptonic.exe
 </pre></div>
