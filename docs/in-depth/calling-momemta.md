@@ -14,11 +14,11 @@ configuration.getGlobalParameters().set("top_mass", 173.);
 
 Then, MoMEMta can be instantiated using a "frozen" configuration set:
 ```cpp
-ParameterSet my_config = my_reader.freeze();
+Configuration my_config = my_reader.freeze();
 MoMEMta weight(my_config);
 ```
 
-> *MoMEMta is instantiated using a `ParameterSet`, describing a fixed configuration: parameters cannot be modified at this stage. Parameters can be changed in the ConfigurationReader, and a new `MoMEMta` instance must then be constructed by calling `ConfigurationReader::freeze()` again.*
+> *MoMEMta is instantiated using a `Configuration` object, describing a fixed configuration: parameters cannot be modified at this stage. Parameters can be changed in the ConfigurationReader, and a new `MoMEMta` instance must then be constructed by calling `ConfigurationReader::freeze()` again.*
 
 The weight can finally be computed by calling the computeWeights() method of the MoMEMta object, passing the observed particles as a set of LorentzVectors:
 
