@@ -106,6 +106,46 @@
             "title": "Default inputs, outputs and parameters "
         }, 
         {
+            "location": "/in-depth/validation/", 
+            "text": "Validation\n#\n\n\nThe main blocks responsible for the change of variables are validated using two differents method:\n\n\n\n\nComputation of the cross-section\n: the block is used to compute the cross-section of a given process. The result is then compared to the cross-section computed using \nMadGraph\n for the same process.\n\n\nComputation of the phase-space volume\n: only the phase-space density is integrated (no PDF or matrix element), and the result is compared to a hand-made calculation.\n\n\n\n\nBlock B\n#\n\n\n\n\nWarning\n\n\n\n\nThis block is included in MoMEMta, but is not yet validated. Be careful if you decide to use it.\n\n\nBlock D\n#\n\n\nThe process is \n\\(pp \\rightarrow t\\bar{t}\\)\n fully-leptonic\n\n\n\n\nMadGraph\n cross-section: \n\\(6.73 \\pm 0.02\\)\n pb\n\n\nMoMEMta cross-section: \n\\(6.69 \\pm 0.03\\)\n pb\n\n\n\n\nPhase-space volume\n#\n\n\n\n\nTheoritical phase-space volume\n1\n : \n\\(694\\)\n \n\\(\\text{GeV}^6\\)\n\n\nMoMEMta phase-space volume: \n\\(694.993 \\pm 3.93901\\ \\text{GeV}^6\\)\n\n\n\n\nBlock F\n#\n\n\nCross-section\n#\n\n\nThe process is \n\\(pp \\rightarrow W^+W^- \\rightarrow \\mu^+\\mu^-\\nu\\bar{\\nu}\\)\n\n\n\n\nMadGraph\n cross-section: \n\\(0.8666 \\pm 0.0053\\)\n pb\n\n\nMoMEMta cross-section: \n\\(0.8636 \\pm 0.00433\\,10^{-3}\\)\n pb\n\n\n\n\nPhase-space volume\n#\n\n\n\n\nTheoritical phase-space volume\n1\n : \n\\(0.0166\\)\n \n\\(\\text{GeV}^2\\)\n\n\nMoMEMta phase-space volume: \n\\(0.0166 \\pm 2.6985\\,10^{-5}\\ \\text{GeV}^2\\)\n\n\n\n\n\n\n\n\n\n\n\n\nPierre Artoisenet, Vincent Lemaitre, Fabio Maltoni and Olivier Mattelaer, \n\u201cAutomation of the matrix element reweighting method\u201d\n, JHEP \n12\n (2010) page 17", 
+            "title": "Validation"
+        }, 
+        {
+            "location": "/in-depth/validation/#validation", 
+            "text": "The main blocks responsible for the change of variables are validated using two differents method:   Computation of the cross-section : the block is used to compute the cross-section of a given process. The result is then compared to the cross-section computed using  MadGraph  for the same process.  Computation of the phase-space volume : only the phase-space density is integrated (no PDF or matrix element), and the result is compared to a hand-made calculation.", 
+            "title": "Validation"
+        }, 
+        {
+            "location": "/in-depth/validation/#block-b", 
+            "text": "Warning   This block is included in MoMEMta, but is not yet validated. Be careful if you decide to use it.", 
+            "title": "Block B"
+        }, 
+        {
+            "location": "/in-depth/validation/#block-d", 
+            "text": "The process is  \\(pp \\rightarrow t\\bar{t}\\)  fully-leptonic   MadGraph  cross-section:  \\(6.73 \\pm 0.02\\)  pb  MoMEMta cross-section:  \\(6.69 \\pm 0.03\\)  pb", 
+            "title": "Block D"
+        }, 
+        {
+            "location": "/in-depth/validation/#phase-space-volume", 
+            "text": "Theoritical phase-space volume 1  :  \\(694\\)   \\(\\text{GeV}^6\\)  MoMEMta phase-space volume:  \\(694.993 \\pm 3.93901\\ \\text{GeV}^6\\)", 
+            "title": "Phase-space volume"
+        }, 
+        {
+            "location": "/in-depth/validation/#block-f", 
+            "text": "", 
+            "title": "Block F"
+        }, 
+        {
+            "location": "/in-depth/validation/#cross-section", 
+            "text": "The process is  \\(pp \\rightarrow W^+W^- \\rightarrow \\mu^+\\mu^-\\nu\\bar{\\nu}\\)   MadGraph  cross-section:  \\(0.8666 \\pm 0.0053\\)  pb  MoMEMta cross-section:  \\(0.8636 \\pm 0.00433\\,10^{-3}\\)  pb", 
+            "title": "Cross-section"
+        }, 
+        {
+            "location": "/in-depth/validation/#phase-space-volume_1", 
+            "text": "Theoritical phase-space volume 1  :  \\(0.0166\\)   \\(\\text{GeV}^2\\)  MoMEMta phase-space volume:  \\(0.0166 \\pm 2.6985\\,10^{-5}\\ \\text{GeV}^2\\)       Pierre Artoisenet, Vincent Lemaitre, Fabio Maltoni and Olivier Mattelaer,  \u201cAutomation of the matrix element reweighting method\u201d , JHEP  12  (2010) page 17", 
+            "title": "Phase-space volume"
+        }, 
+        {
             "location": "/changelog/", 
             "text": "v0.1.0\n#\n\n\n\n\nFirst public release of MoMEMta", 
             "title": "Change log"

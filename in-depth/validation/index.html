@@ -9,19 +9,19 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Configuration file - MoMEMta</title>
+        <title>Validation - MoMEMta</title>
       
       
       
-        <link rel="canonical" href="https://momemta.github.io/in-depth/configuration-file/">
+        <link rel="canonical" href="https://momemta.github.io/in-depth/validation/">
       
       
         <meta name="author" content="The MoMEMta team">
       
     
-    <meta property="og:url" content="https://momemta.github.io/in-depth/configuration-file/">
+    <meta property="og:url" content="https://momemta.github.io/in-depth/validation/">
     <meta property="og:title" content="MoMEMta">
-    <meta property="og:image" content="https://momemta.github.io/in-depth/configuration-file//../../images/logo.png">
+    <meta property="og:image" content="https://momemta.github.io/in-depth/validation//../../images/logo.png">
     <meta name="apple-mobile-web-app-title" content="MoMEMta">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -104,7 +104,7 @@
             
           </span>
         
-        Configuration file
+        Validation
       </div>
     </div>
     
@@ -219,8 +219,17 @@
       
         
   <li>
-    <a class="current" title="Configuration file" href="./">
+    <a class="" title="Configuration file" href="../configuration-file/">
       Configuration file
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="current" title="Validation" href="./">
+      Validation
     </a>
     
       
@@ -230,28 +239,25 @@
         <ul>
           
             <li class="anchor">
-              <a title="Configuring modules" href="#configuring-modules">
-                Configuring modules
+              <a title="Block B" href="#block-b">
+                Block B
               </a>
             </li>
           
             <li class="anchor">
-              <a title="Default inputs, outputs and parameters " href="#default-inputs-outputs-and-parameters">
-                Default inputs, outputs and parameters 
+              <a title="Block D" href="#block-d">
+                Block D
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Block F" href="#block-f">
+                Block F
               </a>
             </li>
           
         </ul>
       
-    
-  </li>
-
-      
-        
-  <li>
-    <a class="" title="Validation" href="../validation/">
-      Validation
-    </a>
     
   </li>
 
@@ -318,75 +324,48 @@
       <article class="article">
         <div class="wrapper">
           
-          <h1 id="the-configuration-file">The configuration file<a class="headerlink" href="#the-configuration-file" title="Permanent link">#</a></h1>
-<h2 id="configuring-modules">Configuring modules<a class="headerlink" href="#configuring-modules" title="Permanent link">#</a></h2>
-<p>Declaring a module named <code>karl</code> of type <code>Gaussian</code> in Lua is simple:</p>
-<div class="code"><pre><span></span>Gaussian.karl = {}
-</pre></div>
-
-
-<p>Each module can be configured by setting its parameters and its inputs:</p>
-<div class="code"><pre><span></span><span class="n">Gaussian</span><span class="p">.</span><span class="n">karl</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">Gaussian</span><span class="p">.</span><span class="n">friedrich</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="c1">-- Some fixed parameters</span>
-    <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">,</span>
-    <span class="n">place</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Gottingen&quot;</span><span class="p">,</span>
-    <span class="n">dead</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="c1">-- Define inputs using other modules’ outputs</span>
-    <span class="n">input</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">karl::output&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>A <strong>parameter</strong> can be an integer (eg.: <code>2</code>), a floating point number, (eg.: <code>172.5</code>, <code>13000.</code> - note the decimal point <em>must</em> be present), a boolean (<code>true</code> or <code>false</code>) or a string (eg.: <code>hello</code>). Parameters might have default values and be optional, or be mandatory.</p>
-<p>An <strong>input</strong> is set through a so-called "<strong>input tag</strong>" of the form <code>other_module::its_output[/i]</code>, where <code>other_module</code> is the name of another module responsible for producing the quantity <code>its_output</code>, and <code>/i</code> has to be used when the produced quantity in question is a vector and only a specific entry of that vector is needed as input. </p>
-<p>Some modules expect <strong>vectors</strong> of input tags, where the order of the entries may or nor matter. Vectors in Lua are easily declared:</p>
-<div class="code"><pre><span></span><span class="c1">-- Take first and third entry of vector output `output` of module `that_module`</span>
-<span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;</span><span class="s">that_module::output/1&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">that_module::output/3&quot;</span> <span class="p">}</span>
-</pre></div>
-
-
-<p>Accessing entries of previously defined vectors is also possible:</p>
-<div class="code"><pre><span></span><span class="n">temp_vector</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;</span><span class="s">first&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">second&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">third&quot;</span> <span class="p">}</span>
-<span class="c1">-- Use only { &quot;first&quot;, &quot;third&quot; }:</span>
-<span class="n">my_inputs</span> <span class="o">=</span> <span class="p">{</span> <span class="n">temp_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">temp_vector</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">}</span>
-</pre></div>
-
-
-<p><strong>NB</strong>: The indexing of Lua vectors or input tags starts at <strong>1, not 0</strong>.</p>
-<p>When declared, a module tells MoMEMta how many dimensions it adds to the integration (for instance, adding a transfer function on the energy of a jet means integrating over the energy of the corresponding parton). If a module adds a dimension, it also means it requires a component of the phase-space point to be specified as input (see below). MoMEMta keeps track of the total number of dimensions needed for the integration. </p>
-<p>The order in which the modules are declared in the script does not matter: MoMEMta automatically executes the module in an order such that inputs are always well-defined (obviously, circular dependencies are forbidden). By default, modules whose outputs are not used by any other module, and modules whose inputs are not produced by any other modules are not executed.</p>
-<h2 id="default-inputs-outputs-and-parameters">Default inputs, outputs and parameters <a name=defaults></a><a class="headerlink" href="#default-inputs-outputs-and-parameters" title="Permanent link">#</a></h2>
-<p>Some inputs and outputs are not defined by any module <em>per se</em> but are used by MoMEMta to pass and retrieve important quantities:</p>
-<p>Inputs:</p>
+          <h1 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">#</a></h1>
+<p>The main blocks responsible for the change of variables are validated using two differents method:</p>
 <ul>
-<li>
-<p><code>input::particles</code>: Vector of LorentzVectors passed as argument to <code>computeWeights()</code></p>
-</li>
-<li>
-<p><code>input::met</code>: LorentzVector of the observed MET (optional argument to <code>computeWeights()</code>)</p>
-</li>
-<li>
-<p><code>cuba::ps_points</code>: Vector of doubles between 0 and 1. Phase-space point, ie. set of random numbers launched by Cuba to perform the integration. The length of the vector is the total number of integration dimensions declared by the modules. Instead of manually specifying the <code>cuba::ps_points/i</code> input tags, it is possible to use to <code>getpspoint()</code> function (which automatically increases “i” each time it is called).</p>
-</li>
-<li>
-<p><code>cuba::ps_weight</code>: (double) Weight associated with the phase-space point</p>
-</li>
+<li><strong>Computation of the cross-section</strong>: the block is used to compute the cross-section of a given process. The result is then compared to the cross-section computed using <code>MadGraph</code> for the same process.</li>
+<li><strong>Computation of the phase-space volume</strong>: only the phase-space density is integrated (no PDF or matrix element), and the result is compared to a hand-made calculation.</li>
 </ul>
-<p>Outputs:</p>
+<h2 id="block-b">Block B<a class="headerlink" href="#block-b" title="Permanent link">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
+<p>This block is included in MoMEMta, but is not yet validated. Be careful if you decide to use it.</p>
+<h2 id="block-d">Block D<a class="headerlink" href="#block-d" title="Permanent link">#</a></h2>
+<p>The process is <span class="tex">\(pp \rightarrow t\bar{t}\)</span> fully-leptonic</p>
 <ul>
-<li><code>integrands</code>: Vector of doubles. This is the value taken to be the integrand, returned to Cuba to compute the integral. Exactly <strong>one</strong> declared module <strong>must</strong> produce this quantity.</li>
+<li><code>MadGraph</code> cross-section: <span class="tex">\(6.73 \pm 0.02\)</span> pb</li>
+<li>MoMEMta cross-section: <span class="tex">\(6.69 \pm 0.03\)</span> pb</li>
 </ul>
-<p>Parameters:</p>
+<h3 id="phase-space-volume">Phase-space volume<a class="headerlink" href="#phase-space-volume" title="Permanent link">#</a></h3>
 <ul>
-<li>
-<p><code>cuba</code></p>
-</li>
-<li>
-<p><code>parameters</code></p>
-</li>
+<li>Theoritical phase-space volume<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> : <span class="tex">\(694\)</span> <span class="tex">\(\text{GeV}^6\)</span></li>
+<li>MoMEMta phase-space volume: <span class="tex">\(694.993 \pm 3.93901\ \text{GeV}^6\)</span></li>
 </ul>
+<h2 id="block-f">Block F<a class="headerlink" href="#block-f" title="Permanent link">#</a></h2>
+<h3 id="cross-section">Cross-section<a class="headerlink" href="#cross-section" title="Permanent link">#</a></h3>
+<p>The process is <span class="tex">\(pp \rightarrow W^+W^- \rightarrow \mu^+\mu^-\nu\bar{\nu}\)</span></p>
+<ul>
+<li><code>MadGraph</code> cross-section: <span class="tex">\(0.8666 \pm 0.0053\)</span> pb</li>
+<li>MoMEMta cross-section: <span class="tex">\(0.8636 \pm 0.00433\,10^{-3}\)</span> pb</li>
+</ul>
+<h3 id="phase-space-volume_1">Phase-space volume<a class="headerlink" href="#phase-space-volume_1" title="Permanent link">#</a></h3>
+<ul>
+<li>Theoritical phase-space volume<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> : <span class="tex">\(0.0166\)</span> <span class="tex">\(\text{GeV}^2\)</span></li>
+<li>MoMEMta phase-space volume: <span class="tex">\(0.0166 \pm 2.6985\,10^{-5}\ \text{GeV}^2\)</span></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="http://arxiv.org/pdf/1007.3300v2.pdf">Pierre Artoisenet, Vincent Lemaitre, Fabio Maltoni and Olivier Mattelaer, <em>“Automation of the matrix element reweighting method”</em>, JHEP <em>12</em> (2010) page 17</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
           <aside class="copyright" role="note">
             
             Documentation built with
@@ -403,7 +382,7 @@
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../calling-momemta/" title="Calling MoMEMta">
+        <a href="../configuration-file/" title="Configuration file">
           <span class="direction">
             Previous
           </span>
@@ -413,7 +392,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                Calling MoMEMta
+                Configuration file
               </div>
             </div>
           </div>
@@ -422,14 +401,14 @@
     </div>
     <div class="next">
       
-        <a href="../validation/" title="Validation">
+        <a href="../../changelog/" title="Change log">
           <span class="direction">
             Next
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                Validation
+                Change log
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">
