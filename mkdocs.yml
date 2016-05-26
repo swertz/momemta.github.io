@@ -29,6 +29,7 @@ markdown_extensions:
       render_to_span: true
   - toc:
       permalink: '#'
+  - footnotes
 
 # MathJax
 extra_javascript:
@@ -44,4 +45,5 @@ pages:
   - 'In depth':
     - 'Calling MoMEMta': 'in-depth/calling-momemta.md'
     - 'Configuration file': 'in-depth/configuration-file.md'
+    - 'Validation': 'in-depth/validation.md'
   - 'Change log': 'changelog.md'
