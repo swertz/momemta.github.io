@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "The MoMEMta project\n#\n\n\nMoMEMta\n is a C++ software package to compute Matrix Element weights. Designed in a modular way, it covers the needs of experimental analysis workflows at the LHC. MoMEMta provides working examples for the most common final states (\n\\(\\text{t}\\bar{\\text{t}}\\)\n, WW, \u2026). If you are an expert user, be prepared to feel the freedom of configuring your MEM computation at all levels.\n\n\nMoMEMta is based on:\n\n\n\n\nC++, ROOT, Lua scripting language\n\n\nCuba (Monte-Carlo integration library)\n\n\nExternal PDFs (LHAPDF by default)\n\n\nExternal Matrix Element (provided by our MadGraph C++ exporter plugin)\n\n\n\n\nYou will probably want to start with our \ngetting started guide\n.\n\n\nOur team\n#\n\n\n\n\nS\u00e9bastien Brochet\n\n\nAlessia Saggio\n\n\nMiguel Vidal\n\n\nS\u00e9bastien Wertz", 
+            "text": "The MoMEMta project\n#\n\n\n\n\nMoMEMta\n is a C++ software package to compute Matrix Element weights. Designed in a modular way, it covers the needs of experimental analysis workflows at the LHC. MoMEMta provides working examples for the most common final states (\n\\(\\text{t}\\bar{\\text{t}}\\)\n, WW, \u2026). If you are an expert user, be prepared to feel the freedom of configuring your MEM computation at all levels.\n\n\nMoMEMta is based on:\n\n\n\n\nC++, ROOT, Lua scripting language\n\n\nCuba (Monte-Carlo integration library)\n\n\nExternal PDFs (LHAPDF by default)\n\n\nExternal Matrix Element (provided by our MadGraph C++ exporter plugin)\n\n\n\n\nYou will probably want to start with our \ngetting started guide\n.\n\n\nOur team\n#\n\n\n\n\nS\u00e9bastien Brochet\n\n\nAlessia Saggio\n\n\nMiguel Vidal\n\n\nS\u00e9bastien Wertz\n\n\n\n\nSpecial thanks to Matthias Komm who designed our logo!", 
             "title": "Main"
         }, 
         {
@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/#our-team", 
-            "text": "S\u00e9bastien Brochet  Alessia Saggio  Miguel Vidal  S\u00e9bastien Wertz", 
+            "text": "S\u00e9bastien Brochet  Alessia Saggio  Miguel Vidal  S\u00e9bastien Wertz   Special thanks to Matthias Komm who designed our logo!", 
             "title": "Our team"
         }, 
         {
