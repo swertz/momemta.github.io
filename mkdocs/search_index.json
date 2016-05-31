@@ -147,12 +147,12 @@
         }, 
         {
             "location": "/changelog/", 
-            "text": "v0.1.0\n#\n\n\n\n\nFirst public release of MoMEMta", 
+            "text": "v0.1.0\n#\n\n\n\n\nFirst public release of MoMEMta. Only \n\\(t\\bar{t}\\)\n and \n\\(W^+W^-\\)\n fully-leptonic matrix elements are included in this release.", 
             "title": "Change log"
         }, 
         {
             "location": "/changelog/#v010", 
-            "text": "First public release of MoMEMta", 
+            "text": "First public release of MoMEMta. Only  \\(t\\bar{t}\\)  and  \\(W^+W^-\\)  fully-leptonic matrix elements are included in this release.", 
             "title": "v0.1.0"
         }
     ]
