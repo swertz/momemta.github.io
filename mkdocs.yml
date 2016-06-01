@@ -6,7 +6,7 @@ site_dir: _site
 google_analytics: ['UA-78443359-1', 'momemta.github.io']
 
 extra:
-  version: '0.1.0'
+  version: 'v0.1.0'
   logo: 'images/logo.png'
   palette:
     primary: 'blue grey'
