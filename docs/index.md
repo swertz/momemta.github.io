@@ -6,10 +6,10 @@
 
 MoMEMta is based on:
 
- - C++, ROOT, Lua scripting language
- - Cuba (Monte-Carlo integration library)
- - External PDFs (LHAPDF by default)
- - External Matrix Element (provided by our MadGraph C++ exporter plugin)
+ - C++, [ROOT](https://root.cern.ch/), [Lua](http://www.lua.org/) scripting language
+ - [Cuba](http://www.feynarts.de/cuba/) (Monte-Carlo integration library)
+ - External PDFs ([LHAPDF](http://lhapdf.hepforge.org/) by default)
+ - External Matrix Elements (currently provided by our MadGraph C++ [exporter plugin](https://github.com/MoMEMta/MoMEMta-MaGMEE))
 
 You will probably want to start with our [getting started guide](getting-started.md).
 

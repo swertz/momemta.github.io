@@ -1,4 +1,4 @@
-In MoMEMta, the integration is defined by linking modules together in a Lua script. MoMEMta is shipped with a set of modules covering the most common needs and whose parameters, inputs and outputs are documented [here](https://momemta.github.io/MoMEMta/group__modules.html). For more information on how to write the configuration file, see [here](configuration-file.md).
+In MoMEMta, the integration is defined by linking modules together in a Lua script. MoMEMta is shipped with a set of modules covering the most common needs and whose parameters, inputs and outputs are documented [here](https://momemta.github.io/MoMEMta/dev/group__modules.html). For more information on how to write the configuration file, see [here](configuration-file.md).
 
 > *A module is just a C++ class deriving from the `Module` virtual class. How to write a new module and make it available for the calculation is described (here).*
 
@@ -27,7 +27,7 @@ LorentzVector p1, p2, p3, p4, met;
 std::vector<std::pair<double, double>> weights = weight.computeWeights({p1, p2, p3, p4}, met);
 ```
 
-> *The MET is an optional parameter*
+> *The MET is an optional argument*
 
 > *The LorentzVectors are expected to be expressed in the `PxPyPzE<double>` basis*
 
