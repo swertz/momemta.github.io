@@ -29,8 +29,8 @@
       <link rel="apple-touch-icon" href="../../images/logo.png">
     
     
-    <link rel="shortcut icon" type="image/x-icon" href="../../None">
-    <link rel="icon" type="image/x-icon" href="../../None">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png">
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.png">
     <style>
       @font-face {
       	font-family: 'Icon';
@@ -307,17 +307,17 @@
 <p><em>A module is just a C++ class deriving from the <code>Module</code> virtual class. How to write a new module and make it available for the calculation is described (here).</em></p>
 </blockquote>
 <p>Once the configuration file is defined, it can be loaded by MoMEMta’s configuration reader:</p>
-<div class="code"><pre><span class="n">ConfigurationReader</span> <span class="nf">my_reader</span><span class="p">(</span><span class="s">&quot;relative_path_to_lua_file.lua&quot;</span><span class="p">);</span>
+<div class="code"><pre><span></span><span class="n">ConfigurationReader</span> <span class="nf">my_reader</span><span class="p">(</span><span class="s">&quot;relative_path_to_lua_file.lua&quot;</span><span class="p">);</span>
 </pre></div>
 
 
 <p>At this point, the user might wish to modify some parameters defined in the file from the code itself:</p>
-<div class="code"><pre><span class="n">configuration</span><span class="p">.</span><span class="n">getGlobalParameters</span><span class="p">().</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;top_mass&quot;</span><span class="p">,</span> <span class="mf">173.</span><span class="p">);</span>
+<div class="code"><pre><span></span><span class="n">configuration</span><span class="p">.</span><span class="n">getGlobalParameters</span><span class="p">().</span><span class="n">set</span><span class="p">(</span><span class="s">&quot;top_mass&quot;</span><span class="p">,</span> <span class="mf">173.</span><span class="p">);</span>
 </pre></div>
 
 
 <p>Then, MoMEMta can be instantiated using a "frozen" configuration set:</p>
-<div class="code"><pre><span class="n">Configuration</span> <span class="n">my_config</span> <span class="o">=</span> <span class="n">my_reader</span><span class="p">.</span><span class="n">freeze</span><span class="p">();</span>
+<div class="code"><pre><span></span><span class="n">Configuration</span> <span class="n">my_config</span> <span class="o">=</span> <span class="n">my_reader</span><span class="p">.</span><span class="n">freeze</span><span class="p">();</span>
 <span class="n">MoMEMta</span> <span class="nf">weight</span><span class="p">(</span><span class="n">my_config</span><span class="p">);</span>
 </pre></div>
 
@@ -326,7 +326,7 @@
 <p><em>MoMEMta is instantiated using a <code>Configuration</code> object, describing a fixed configuration: parameters cannot be modified at this stage. Parameters can be changed in the ConfigurationReader, and a new <code>MoMEMta</code> instance must then be constructed by calling <code>ConfigurationReader::freeze()</code> again.</em></p>
 </blockquote>
 <p>The weight can finally be computed by calling the computeWeights() method of the MoMEMta object, passing the observed particles as a set of LorentzVectors:</p>
-<div class="code"><pre><span class="n">LorentzVector</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">met</span><span class="p">;</span>
+<div class="code"><pre><span></span><span class="n">LorentzVector</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">,</span> <span class="n">met</span><span class="p">;</span>
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">weight</span><span class="p">.</span><span class="n">computeWeights</span><span class="p">({</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">},</span> <span class="n">met</span><span class="p">);</span>
 </pre></div>
 
