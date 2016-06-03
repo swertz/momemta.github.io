@@ -2,6 +2,7 @@ site_name: MoMEMta
 site_description: 'Modular Matrix Element Method implementation'
 site_author: 'The MoMEMta team'
 site_url: 'https://momemta.github.io'
+site_favicon: favicon.png
 site_dir: _site
 google_analytics: ['UA-78443359-1', 'momemta.github.io']
 
