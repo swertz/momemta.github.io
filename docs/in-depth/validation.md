@@ -1,9 +1,9 @@
 # Validation
 
-The phase-space parametrisations in terms of blocks are validated using two differents method:
+The phase-space parametrisations in terms of blocks are validated using two differents methods:
 
  - **Computation of a cross-section**: the block is used to compute the cross-section of a given process. The result is then compared to the cross-section computed using MadGraph[^1] for the same process.
- - **Computation of a phase-space volume**: only the phase-space density is integrated (no PDF or matrix element), and the result is compared to a hand-made calculation[^2].
+ - **Computation of a phase-space volume**: only the phase-space density is integrated (no PDF or matrix element), and the result is compared with an analytical result[^2].
 
 In both cases, MoMEMta's phase-space parametrisations are not efficient for the problem, but by increasing the number of integrand evaluations to a very large number, sufficient precision can be reached nonetheless.
 
@@ -94,16 +94,14 @@ Volume computed: production of 4 massless particles at $\sqrt{s} = 1$ TeV
 
 ### Cross-section
 
-The process used is $pp \rightarrow W^+W^- \rightarrow \mu^+\mu^-\nu\bar{\nu}$
-Main block used for computation: B
+The process used is $pp \rightarrow W^+W^- \rightarrow \mu^+\mu^-\nu\bar{\nu}$ <br/> Main block used for computation: B
 
  - MadGraph cross-section: $0.866(5)$ pb
  - MoMEMta cross-section: $0.868(8)$ pb
 
 ### Phase-space volume
 
-Volume computed: production of 4 massless particles at $\sqrt{s} = 1$ TeV
-Main block used for computation: A
+Volume computed: production of 4 massless particles at $\sqrt{s} = 1$ TeV <br/> Main block used for computation: A
 
  - Theoretical phase-space volume: $0.0166$ $\text{GeV}^2$
  - MoMEMta phase-space volume: $0.01663(6) \text{GeV}^2$
