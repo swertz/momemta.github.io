@@ -2,13 +2,12 @@
 
 ## How to use it
 
-The website is generated with [mkdocs](http://www.mkdocs.org). Main configuration file is `mkdocs.yml`. In order to generate the documentation, you first need to install mkdocs. Follow the official instructions for that: http://www.mkdocs.org/#installation
+The website is generated with [mkdocs](http://www.mkdocs.org). Main configuration file is `mkdocs.yml`. In order to generate the documentation, you first need to install mkdocs (follow special instructions for ingrid first if you need to)
 
-You also need to checkout some submodules (like the theme we use):
+### Cloning the documentation
 
 ```
-git submodule init
-git submodule update
+git clone -o upstream -b website git@github.com:MoMEMta/momemta.github.io.git
 ```
 
 ### ingrid special instructions
@@ -19,12 +18,22 @@ If you want to deploy from ingrid instead of your own laptop (why?), you need to
  2. Install virtualenv: `pip install --user virtualenv`. You will also need to add `$HOME/.local/bin` to your `$PATH` variable, and `$HOME/.local/lib/python2.6/site-packages` to `$PYTHONPATH`.
  3. Setup the virtual environment: `virtualenv -p /cvmfs/cp3.uclouvain.be/python/python-2.7.9-sl6_amd64_gcc49/bin/python env`
  4. Activate the virtual env: `source env/bin/activate`. You are now isolated from the rest of ingrid python env, and can install all the software you want.
- 5. Install mkdocs: `pip install mkdocs`
- 6. You can now perform the `git submodule` operation describe above.
+ 5. Follow the standard instruction to install mkdocs and the dependencies (see below)
 
 You can exit the virtual environment by executing `deactivate`.
 
 **Note**: you'll need to reload the virtual environment everytime you want to use `mkdocs` by doing `source env/bin/activate`!
+
+### Installing mkdocs and all the dependencies
+
+The dependencies needed for the website are listed in the `requirements.txt` file. Let's install everything with `pip`:
+
+```
+pip install -r requirements.txt
+```
+
+This will install `mkdocs`, `mkdocs-material` (the theme) as well as some extensions we use.
+
 
 ## Write documentation
 

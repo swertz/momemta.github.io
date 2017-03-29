@@ -7,8 +7,8 @@ The main blocks responsible for the change of variables are validated using two 
 
 ## Block B
 
-!!! Warning
-This block is included in MoMEMta, but is not yet validated. Be careful if you decide to use it.
+!!! warning
+    This block is included in MoMEMta, but is not yet validated. Be careful if you decide to use it.
 
 ## Block D
 

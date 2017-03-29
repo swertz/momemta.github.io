@@ -6,43 +6,57 @@ site_favicon: favicon.png
 site_dir: _site
 google_analytics: ['UA-78443359-1', 'momemta.github.io']
 
+# Copyright
+copyright: 'Copyright &copy; 2016 - 2017 the MoMEMta team'
+
 extra:
   version: 'v0.1.0'
-  logo: 'images/logo.png'
+  logo: 'images/logo.svg'
   palette:
     primary: 'blue grey'
     accent: 'teal'
-  links:
-    - 'Roadmap': 'https://trello.com/b/lQXfKafM/momemta-roadmap'
-    - 'Technical documentation': 'https://momemta.github.io/MoMEMta/'
-    - 'Contact us': mailto:momemta-contact@cern.ch
+  social:
+    - type: 'envelope'
+      link: 'mailto:momemta-contact@cern.ch'
+      title: 'Contact us'
+    - type: 'book'
+      link: 'https://momemta.github.io/MoMEMta/'
+      title: 'Technical documentation'
+    - type: 'map'
+      link: 'https://trello.com/b/lQXfKafM/momemta-roadmap'
+      title: 'Roadmap'
 
 repo_name: 'GitHub'
 repo_url: 'https://github.com/MoMEMta/MoMEMta'
- 
-theme_dir: 'mkdocs-material/material'
+edit_uri: null
+
+theme: 'material'
+theme_dir: 'theme'
 
 # Extensions
 markdown_extensions:
-  - codehilite(css_class=code)
+  - codehilite
   - admonition
   - mdx_math:
       enable_dollar_delimiter: true
-      render_to_span: true
-  - toc:
-      permalink: '#'
+  - toc(permalink=true)
   - footnotes
+  - meta
 
 # MathJax
 extra_javascript:
   - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML
 
+extra_css:
+  - 'stylesheets/base16-eighties.dark.css'
+
 pages:
-  - Main: index.md
+  - The MoMEMta project: index.md
   - What is MoMEMta?: introduction.md
   - Getting started: 'getting-started.md'
   - 'In depth':
     - 'Calling MoMEMta': 'in-depth/calling-momemta.md'
     - 'Configuration file': 'in-depth/configuration-file.md'
     - 'Validation': 'in-depth/validation.md'
-  - 'Change log': 'changelog.md'
+  - 'Release notes': 'changelog.md'
+  - 'Acknowledgement': 'acknowledgement.md'

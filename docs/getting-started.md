@@ -12,12 +12,13 @@ MoMEMta depends on the following libraries and tools:
  - ROOT (>=5.34.09)
  - A C++11-capable compiler
 
-**Note**: MoMEMta has only been tested on GNU/Linux.
+!!! note
+    MoMEMta has only been tested on GNU/Linux.
 
 ### Compilation
 
 Retrieve the code on [our github repository](https://github.com/MoMEMta/MoMEMta/releases). Unpack the archive and / or go to the `MoMEMta` directory. Next, execute the following:
-```
+```bash
 mkdir build
 cd build
 cmake ..
@@ -25,7 +26,7 @@ make -j 4
 ```
 
 Finally, make MoMEMta (public headers and library) available using:
-```
+```bash
 make install
 ```
 
