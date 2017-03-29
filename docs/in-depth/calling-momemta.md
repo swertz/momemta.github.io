@@ -27,12 +27,15 @@ LorentzVector p1, p2, p3, p4, met;
 std::vector<std::pair<double, double>> weights = weight.computeWeights({p1, p2, p3, p4}, met);
 ```
 
-> *The MET is an optional argument*
+!!! note ""
+    The MET is an optional argument
 
-> *The LorentzVectors are expected to be expressed in the `PxPyPzE<double>` basis*
+!!! note ""
+    The LorentzVectors are expected to be expressed in the `PxPyPzE<double>` basis
 
 The function starts the Monte-Carlo integration: the integrand function is called a large number of times, each time passing as input a phase-space point vector (where the length of the vector is the dimensionality of the integrated phase-space) with elements lying between 0 and 1, and returning as output the integrated function evaluated on this point.
 
 `computeWeights()` returns a vector of pairs (weight, uncertainty) (at the moment, this vector only has one entry) which can then be stored by the user.
 
-> *The phase-space points are associated with a weight, given that they are not distributed uniformly in the phase-space, but according to the importance function defined by Vegas. In most use cases this weight is not needed by the user since Cuba automatically takes it into account when computing the integral, however it can still be retrieved through the `cuba::ps_weight` input tag (see [here](configuration-file.md#defaults)).*
+!!! tip ""
+    The phase-space points are associated with a weight, given that they are not distributed uniformly in the phase-space, but according to the importance function defined by Vegas. In most use cases this weight is not needed by the user since Cuba automatically takes it into account when computing the integral, however it can still be retrieved through the `cuba::ps_weight` input tag (see [here](configuration-file.md#defaults)).

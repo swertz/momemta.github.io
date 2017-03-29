@@ -4,7 +4,7 @@
 
 Declaring a module named `karl` of type `Gaussian` in Lua is simple:
 
-```
+```lua
 Gaussian.karl = {}
 ```
 
@@ -40,7 +40,9 @@ temp_vector = { "first", "second", "third" }
 -- Use only { "first", "third" }:
 my_inputs = { temp_vector[1], temp_vector[3] }
 ```
-**NB**: The indexing of Lua vectors or input tags starts at **1, not 0**.
+
+!!! warning
+    The indexing of Lua vectors or input tags starts at **1, not 0**.
 
 When declared, a module tells MoMEMta how many dimensions it adds to the integration (for instance, adding a transfer function on the energy of a jet means integrating over the energy of the corresponding parton). If a module adds a dimension, it also means it requires a component of the phase-space point to be specified as input (see below). MoMEMta keeps track of the total number of dimensions needed for the integration. 
 
