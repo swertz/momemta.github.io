@@ -1,16 +1,12 @@
+
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <title>Configuration file - MoMEMta</title>
-      
+        <meta name="description" content="Modular Matrix Element Method implementation">
       
       
         <link rel="canonical" href="https://momemta.github.io/in-depth/configuration-file/">
@@ -18,321 +14,448 @@
       
         <meta name="author" content="The MoMEMta team">
       
-    
-    <meta property="og:url" content="https://momemta.github.io/in-depth/configuration-file/">
-    <meta property="og:title" content="MoMEMta">
-    <meta property="og:image" content="https://momemta.github.io/in-depth/configuration-file//../../images/logo.png">
-    <meta name="apple-mobile-web-app-title" content="MoMEMta">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-      <link rel="apple-touch-icon" href="../../images/logo.png">
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png">
-    <link rel="icon" type="image/x-icon" href="../../../../favicon.png">
-    <style>
-      @font-face {
-      	font-family: 'Icon';
-      	src: url('../../assets/fonts/icon.eot?52m981');
-      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
-               format('embedded-opentype'),
-      		   url('../../assets/fonts/icon.woff?52m981')
-               format('woff'),
-      		   url('../../assets/fonts/icon.ttf?52m981')
-               format('truetype'),
-      		   url('../../assets/fonts/icon.svg?52m981#icon')
-               format('svg');
-      	font-weight: normal;
-      	font-style: normal;
-      }
-    </style>
-    <link rel="stylesheet" href="../../assets/stylesheets/application-1f155f2ba8.css">
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/palettes-2d6c5d2926.css">
+      
+        <link rel="shortcut icon" href="../../favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
     
     
       
+        <title>Configuration file - MoMEMta</title>
       
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
-      <style>
-        body, input {
-          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-        }
-        pre, code {
-          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
-        }
-      </style>
     
     
-    <script src="../../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-d848f886dc.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/base16-eighties.dark.css">
+    
     
   </head>
   
   
   
-  <body class="palette-primary-blue-grey palette-accent-teal">
-    
-      
-      
-    
-    <div class="backdrop">
-      <div class="backdrop-paper"></div>
-    </div>
-    <input class="toggle" type="checkbox" id="toggle-drawer">
-    <input class="toggle" type="checkbox" id="toggle-search">
-    <label class="toggle-button overlay" for="toggle-drawer"></label>
-    <header class="header">
-      <nav aria-label="Header">
-  <div class="bar default">
-    <div class="button button-menu" role="button" aria-label="Menu">
-      <label class="toggle-button icon icon-menu" for="toggle-drawer">
-        <span></span>
-      </label>
-    </div>
-    <div class="stretch">
-      <div class="title">
-        
-          <span class="path">
-            
-              
-                In depth <i class="icon icon-link"></i>
-              
-            
-          </span>
-        
-        Configuration file
-      </div>
-    </div>
-    
-    
-    <div class="button button-search" role="button" aria-label="Search">
-      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
-    </div>
-  </div>
-  <div class="bar search">
-    <div class="button button-close" role="button" aria-label="Close">
-      <label class="toggle-button icon icon-back" for="toggle-search"></label>
-    </div>
-    <div class="stretch">
-      <div class="field">
-        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
-      </div>
-    </div>
-    <div class="button button-reset" role="button" aria-label="Search">
-      <button class="toggle-button icon icon-close" id="reset-search"></button>
-    </div>
-  </div>
-</nav>
-    </header>
-    <main class="main">
-      
-      <div class="drawer">
-        <nav aria-label="Navigation">
   
-  <a href="https://github.com/MoMEMta/MoMEMta" class="project">
-    <div class="banner">
-      
-        <div class="logo">
-          <img src="../../images/logo.png">
-        </div>
-      
-      <div class="name">
-        <strong>
-          MoMEMta
-          <span class="version">
-            v0.1.0
-          </span>
-        </strong>
+    <body data-md-color-primary="blue-grey" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
         
-          <br>
-          MoMEMta/MoMEMta
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="MoMEMta" class="md-logo md-header-nav__button">
+            <img src="../../images/logo.svg" width="24" height="24">
+          </a>
         
       </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  In depth
+                </span>
+              
+            
+            Configuration file
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/MoMEMta/MoMEMta" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
     </div>
   </a>
-  <div class="scrollable">
-    <div class="wrapper">
-      
-        <ul class="repo">
-          <li class="repo-download">
-            
-            <a href="https://github.com/MoMEMta/MoMEMta/archive/v0.1.0.zip" target="_blank" title="Download" data-action="download">
-              <i class="icon icon-download"></i> Download
-            </a>
-          </li>
-          <li class="repo-stars">
-            <a href="https://github.com/MoMEMta/MoMEMta/stargazers" target="_blank" title="Stargazers" data-action="star">
-              <i class="icon icon-star"></i> Stars
-              <span class="count">&ndash;</span>
-            </a>
-          </li>
-        </ul>
-        <hr>
-      
-      <div class="toc">
-        <ul>
-          
-            
-  <li>
-    <a class="" title="Main" href="../..">
-      Main
-    </a>
-    
-  </li>
 
           
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
             
-  <li>
-    <a class="" title="What is MoMEMta?" href="../../introduction/">
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
+  Copyright (c) 2016-2017 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Main navigation -->
+<nav class="md-nav md-nav--primary" data-md-level="0">
+
+  <!-- Site title -->
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../images/logo.svg" />
+      </i>
+    
+    MoMEMta
+  </label>
+
+  <!-- Repository containing source -->
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/MoMEMta/MoMEMta" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+
+  <!-- Render item list -->
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="The MoMEMta project" class="md-nav__link">
+      The MoMEMta project
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../introduction/" title="What is MoMEMta?" class="md-nav__link">
       What is MoMEMta?
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Getting started" href="../../getting-started/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting started" class="md-nav__link">
       Getting started
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <span class="section">In depth</span>
-    <ul>
+    
       
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      In depth
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        In depth
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
         
-  <li>
-    <a class="" title="Calling MoMEMta" href="../calling-momemta/">
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../calling-momemta/" title="Calling MoMEMta" class="md-nav__link">
       Calling MoMEMta
     </a>
-    
   </li>
 
-      
         
-  <li>
-    <a class="current" title="Configuration file" href="./">
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Configuration file
+      </label>
+    
+    <a href="./" title="Configuration file" class="md-nav__link md-nav__link--active">
       Configuration file
     </a>
     
       
-        
-      
-      
-        <ul>
-          
-            <li class="anchor">
-              <a title="Configuring modules" href="#configuring-modules">
-                Configuring modules
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="Default inputs, outputs and parameters " href="#default-inputs-outputs-and-parameters">
-                Default inputs, outputs and parameters 
-              </a>
-            </li>
-          
-        </ul>
-      
+<nav class="md-nav md-nav--secondary">
+  
+  
     
-  </li>
-
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
       
-        
-  <li>
-    <a class="" title="Validation" href="../validation/">
-      Validation
-    </a>
-    
-  </li>
-
+        <li class="md-nav__item">
+  <a href="#configuring-modules" title="Configuring modules" class="md-nav__link">
+    Configuring modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-inputs-outputs-and-parameters" title="Default inputs, outputs and parameters " class="md-nav__link">
+    Default inputs, outputs and parameters 
+  </a>
+  
+</li>
+      
+      
       
     </ul>
-  </li>
-
-          
-            
-  <li>
-    <a class="" title="Change log" href="../../changelog/">
-      Change log
-    </a>
+  
+</nav>
     
   </li>
 
-          
-        </ul>
         
-          <hr>
-          <ul>
           
-              
-              
-              <li>
-                <a href="https://trello.com/b/lQXfKafM/momemta-roadmap" target="_blank" title="Roadmap">
-                    Roadmap
-                </a>
-              </li>
           
-              
-              
-              <li>
-                <a href="https://momemta.github.io/MoMEMta/" target="_blank" title="Technical documentation">
-                    Technical documentation
-                </a>
-              </li>
           
-              
-              
-              <li>
-                <a href="mailto:momemta-contact@cern.ch" target="_blank" title="Contact us">
-                    Contact us
-                </a>
-              </li>
-          
-          </ul>
+
+
+  <li class="md-nav__item">
+    <a href="../validation/" title="Validation" class="md-nav__link">
+      Validation
+    </a>
+  </li>
+
         
-        
-        <span class="section"><small>This work would not have been possible without the help of the MadWeight team and funding of</small></span>
-        <div class="logos">
-          <a href="http://www.uclouvain.be"><img src="../../assets/images/UCL-dab39722f2.png"></a>
-          <a href="http://cp3.irmp.ucl.ac.be"><img src="../../assets/images/CP3-1602821e56.png"></a>
-        </div>
-        <div class="logos">
-          <a href="http://www.frs-fnrs.be"><img src="../../assets/images/FNRS-3f43ef8877.png"></a>
-          <a href="http://www.pd.infn.it/AMVA4NewPhysics"><img src="../../assets/images/AMVA4-bb51b35e33.png"></a>
-        </div>
-      </div>
-    </div>
-  </div>
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../changelog/" title="Release notes" class="md-nav__link">
+      Release notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../acknowledgement/" title="Acknowledgement" class="md-nav__link">
+      Acknowledgement
+    </a>
+  </li>
+
+    
+
+    
+  </ul>
 </nav>
-      </div>
-      <article class="article">
-        <div class="wrapper">
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-modules" title="Configuring modules" class="md-nav__link">
+    Configuring modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-inputs-outputs-and-parameters" title="Default inputs, outputs and parameters " class="md-nav__link">
+    Default inputs, outputs and parameters 
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
-          <h1 id="the-configuration-file">The configuration file<a class="headerlink" href="#the-configuration-file" title="Permanent link">#</a></h1>
-<h2 id="configuring-modules">Configuring modules<a class="headerlink" href="#configuring-modules" title="Permanent link">#</a></h2>
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/MoMEMta/MoMEMta/edit/master/docs/in-depth/configuration-file.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                
+                
+                <h1 id="the-configuration-file">The configuration file<a class="headerlink" href="#the-configuration-file" title="Permanent link">&para;</a></h1>
+<h2 id="configuring-modules">Configuring modules<a class="headerlink" href="#configuring-modules" title="Permanent link">&para;</a></h2>
 <p>Declaring a module named <code>karl</code> of type <code>Gaussian</code> in Lua is simple:</p>
-<div class="code"><pre><span></span>Gaussian.karl = {}
+<div class="codehilite"><pre><span></span><span class="n">Gaussian</span><span class="p">.</span><span class="n">karl</span> <span class="o">=</span> <span class="p">{}</span>
 </pre></div>
 
 
 <p>Each module can be configured by setting its parameters and its inputs:</p>
-<div class="code"><pre><span></span><span class="n">Gaussian</span><span class="p">.</span><span class="n">karl</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="codehilite"><pre><span></span><span class="n">Gaussian</span><span class="p">.</span><span class="n">karl</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">Gaussian</span><span class="p">.</span><span class="n">friedrich</span> <span class="o">=</span> <span class="p">{</span>
     <span class="c1">-- Some fixed parameters</span>
     <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span>
     <span class="n">size</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">,</span>
-    <span class="n">place</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Gottingen&quot;</span><span class="p">,</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="s2">&quot;Gottingen&quot;</span><span class="p">,</span>
     <span class="n">dead</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
     <span class="c1">-- Define inputs using other modules’ outputs</span>
-    <span class="n">input</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">karl::output&quot;</span>
+    <span class="n">input</span> <span class="o">=</span> <span class="s2">&quot;karl::output&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -340,22 +463,25 @@
 <p>A <strong>parameter</strong> can be an integer (eg.: <code>2</code>), a floating point number, (eg.: <code>172.5</code>, <code>13000.</code> - note the decimal point <em>must</em> be present), a boolean (<code>true</code> or <code>false</code>) or a string (eg.: <code>hello</code>). Parameters might have default values and be optional, or be mandatory.</p>
 <p>An <strong>input</strong> is set through a so-called "<strong>input tag</strong>" of the form <code>other_module::its_output[/i]</code>, where <code>other_module</code> is the name of another module responsible for producing the quantity <code>its_output</code>, and <code>/i</code> has to be used when the produced quantity in question is a vector and only a specific entry of that vector is needed as input. </p>
 <p>Some modules expect <strong>vectors</strong> of input tags, where the order of the entries may or nor matter. Vectors in Lua are easily declared:</p>
-<div class="code"><pre><span></span><span class="c1">-- Take first and third entry of vector output `output` of module `that_module`</span>
-<span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;</span><span class="s">that_module::output/1&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">that_module::output/3&quot;</span> <span class="p">}</span>
+<div class="codehilite"><pre><span></span><span class="c1">-- Take first and third entry of vector output `output` of module `that_module`</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;that_module::output/1&quot;</span><span class="p">,</span> <span class="s2">&quot;that_module::output/3&quot;</span> <span class="p">}</span>
 </pre></div>
 
 
 <p>Accessing entries of previously defined vectors is also possible:</p>
-<div class="code"><pre><span></span><span class="n">temp_vector</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;</span><span class="s">first&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">second&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="s">third&quot;</span> <span class="p">}</span>
+<div class="codehilite"><pre><span></span><span class="n">temp_vector</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="p">,</span> <span class="s2">&quot;third&quot;</span> <span class="p">}</span>
 <span class="c1">-- Use only { &quot;first&quot;, &quot;third&quot; }:</span>
 <span class="n">my_inputs</span> <span class="o">=</span> <span class="p">{</span> <span class="n">temp_vector</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">temp_vector</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">}</span>
 </pre></div>
 
 
-<p><strong>NB</strong>: The indexing of Lua vectors or input tags starts at <strong>1, not 0</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The indexing of Lua vectors or input tags starts at <strong>1, not 0</strong>.</p>
+</div>
 <p>When declared, a module tells MoMEMta how many dimensions it adds to the integration (for instance, adding a transfer function on the energy of a jet means integrating over the energy of the corresponding parton). If a module adds a dimension, it also means it requires a component of the phase-space point to be specified as input (see below). MoMEMta keeps track of the total number of dimensions needed for the integration. </p>
 <p>The order in which the modules are declared in the script does not matter: MoMEMta automatically executes the module in an order such that inputs are always well-defined (obviously, circular dependencies are forbidden). By default, modules whose outputs are not used by any other module, and modules whose inputs are not produced by any other modules are not executed.</p>
-<h2 id="default-inputs-outputs-and-parameters">Default inputs, outputs and parameters <a name=defaults></a><a class="headerlink" href="#default-inputs-outputs-and-parameters" title="Permanent link">#</a></h2>
+<h2 id="default-inputs-outputs-and-parameters">Default inputs, outputs and parameters <a name=defaults></a><a class="headerlink" href="#default-inputs-outputs-and-parameters" title="Permanent link">&para;</a></h2>
 <p>Some inputs and outputs are not defined by any module <em>per se</em> but are used by MoMEMta to pass and retrieve important quantities:</p>
 <p>Inputs:</p>
 <ul>
@@ -385,113 +511,101 @@
 <p><code>parameters</code></p>
 </li>
 </ul>
-          <aside class="copyright" role="note">
-            
-            Documentation built with
-            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
-            using the
-            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
-              Material
-            </a>
-            theme.
-          </aside>
-          
-            <footer class="footer">
+                
+                  
+                
               
-  <nav class="pagination" aria-label="Footer">
-    <div class="previous">
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
       
-        <a href="../calling-momemta/" title="Calling MoMEMta">
-          <span class="direction">
-            Previous
-          </span>
-          <div class="page">
-            <div class="button button-previous" role="button" aria-label="Previous">
-              <i class="icon icon-back"></i>
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../calling-momemta/" title="Calling MoMEMta" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-            <div class="stretch">
-              <div class="title">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
                 Calling MoMEMta
-              </div>
+              </span>
             </div>
-          </div>
-        </a>
-      
-    </div>
-    <div class="next">
-      
-        <a href="../validation/" title="Validation">
-          <span class="direction">
-            Next
-          </span>
-          <div class="page">
-            <div class="stretch">
-              <div class="title">
+          </a>
+        
+        
+          <a href="../validation/" title="Validation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
                 Validation
-              </div>
+              </span>
             </div>
-            <div class="button button-next" role="button" aria-label="Next">
-              <i class="icon icon-forward"></i>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
             </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2017 the MoMEMta team
           </div>
-        </a>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <a href="mailto:momemta-contact@cern.ch" title="Contact us" class="md-footer-social__link fa fa-envelope"></a>
+    
+    <a href="https://momemta.github.io/MoMEMta/" title="Technical documentation" class="md-footer-social__link fa fa-book"></a>
+    
+    <a href="https://trello.com/b/lQXfKafM/momemta-roadmap" title="Roadmap" class="md-footer-social__link fa fa-map"></a>
+    
+  </div>
+
       
     </div>
-  </nav>
-
-            </footer>
-          
-        </div>
-      </article>
-      <div class="results" role="status" aria-live="polite">
-        <div class="scrollable">
-          <div class="wrapper">
-            <div class="meta"></div>
-            <div class="list"></div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <script>
-      var base_url = '../..';
-      var repo_id  = 'MoMEMta/MoMEMta';
-    </script>
-    <script src="../../assets/javascripts/application-dfb6964a49.js"></script>
+  </div>
+</footer>
+      
+    </div>
     
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+      <script src="../../assets/javascripts/application-c6f9af8d0c.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+      
     
     
-      <script>
-        (function(i,s,o,g,r,a,m){
-          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
-          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
-          m.parentNode.insertBefore(a,m)
-        })(window, document,
-          'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        /* General initialization */
-        ga('create', 'UA-78443359-1', 'momemta.github.io');
-        ga('set', 'anonymizeIp', true);
-        ga('send', 'pageview');
-        /* Track outbound links */
-        var buttons = document.querySelectorAll('a');
-        Array.prototype.map.call(buttons, function(item) {
-          if (item.host != document.location.host) {
-            item.addEventListener('click', function() {
-              var action = item.getAttribute('data-action') || 'follow';
-              ga('send', 'event', 'outbound', action, item.href);
-            });
-          }
-        });
-        /* Register handler to log search on blur */
-        var query = document.querySelector('.query');
-        query.addEventListener('blur', function() {
-          if (this.value) {
-            var path = document.location.pathname;
-            ga('send', 'pageview', path + '?q=' + this.value);
-          }
-        });
-      </script>
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-78443359-1","momemta.github.io"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
     
   </body>
 </html>
