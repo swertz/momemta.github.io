@@ -59,4 +59,4 @@ pages:
     - 'Configuration file': 'in-depth/configuration-file.md'
     - 'Validation': 'in-depth/validation.md'
   - 'Release notes': 'changelog.md'
-  - 'Acknowledgement': 'acknowledgement.md'
+  #- 'Acknowledgements': 'acknowledgement.md'
