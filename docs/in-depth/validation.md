@@ -3,7 +3,10 @@
 The phase-space parametrisations in terms of blocks are validated using two differents methods:
 
  - **Computation of a cross-section**: the block is used to compute the cross-section of a given process. The result is then compared to the cross-section computed using MadGraph[^1] for the same process.
- - **Computation of a phase-space volume**: only the phase-space density is integrated (no PDF or matrix element), and the result is compared with an analytical result[^2].
+ - **Computation of a phase-space volume**: only the phase-space density is integrated (no PDF or matrix element), and the result is compared with the analytical result for production of $n$ massless particles at a hadronic centre-of-mass energy of $\sqrt{s}$ GeV: 
+  \[
+    V(\sqrt{s}, n) = \frac{s^{n-3}}{2^{4(n-1)} \pi^{2n-3} (n-1) (n-2)^2 ((n-2)!)^2}
+  \]
 
 In both cases, MoMEMta's phase-space parametrisations are not efficient for the problem, but by increasing the number of integrand evaluations to a very large number, sufficient precision can be reached nonetheless.
 
@@ -108,4 +111,3 @@ Volume computed: production of 4 massless particles at $\sqrt{s} = 1$ TeV <br/> 
 
 
 [^1]: [J. Alwall et al., *“The automated computation of tree-level and next-to-leading order differential cross sections, and their matching to parton shower simulations”*, JHEP *07* (2014) *079*](https://arxiv.org/pdf/1405.0301v2)
-[^2]: [Pierre Artoisenet, Vincent Lemaitre, Fabio Maltoni and Olivier Mattelaer, *“Automation of the matrix element reweighting method”*, JHEP *12* (2010) *068*, p. 17](http://arxiv.org/pdf/1007.3300v2.pdf)

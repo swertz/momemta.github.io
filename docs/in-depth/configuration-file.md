@@ -1,6 +1,6 @@
 # The configuration file
 
-## Configure modules
+## Configuring modules
 
 Different *types* of modules are available on MoMEMta, each designed to perform a specific task. 
 Declaring an instance of a module named `karl` of type `Gaussian` in Lua is simple:
@@ -45,13 +45,13 @@ my_inputs = { temp_vector[1], temp_vector[3] }
 !!! warning
     The indexing of Lua vectors or input tags starts at **1, not 0**.
 
-The use of some modules requires adding a dimension to the volume that is being integrated over. In other words, those modules need a component of the phase-space point to be specified as input. This is done using the function `add_dimension()`, which returns an input tag linking to a component of the phase-space point, and notifies MoMEMta to add an integration dimension.
+The use of some modules requires adding a dimension to the volume that is being integrated over. In other words, those modules need a component of the phase-space points to be specified as input. This is done using the function `add_dimension()`, which returns an input tag linking to a component of the phase-space point, and notifies MoMEMta to add an integration dimension.
 
 The order in which the modules are declared in the script does not matter: MoMEMta automatically executes the modules in an order such that inputs are always well-defined (obviously, circular dependencies are forbidden). By default, modules whose outputs are not used by any other module, and modules whose inputs are not produced by any other modules are not executed.
 
 A full list of modules available out-of-the-box, along with documentation about the modules' inputs, outputs and parameters, is available at MoMEMta's [technical documentation](https://momemta.github.io/MoMEMta/dev/group__modules.html).
 
-## Declare input particles
+## Declaring input particles
 
 Particles passed as input to the `computeWeights()` function (see [Calling MoMEMta](calling-momemta)) can be linked with the modules by registering them in the Lua configuration. For instance, for a particle declared in C++ as `momemta::Particle m_part1 { "part1", p1, 0 }`, one would do:
 ```Lua
@@ -80,9 +80,9 @@ Finally, the missing transverse energy 4-vector (passed optionally to `computeWe
 local met = declare_input("met")
 ```
 
-## Declare the integrand
+## Declaring the integrand
 
-When the integration is fully configured, i.e. all the final module defining the integrand value is defined, the integrand has to be registered with MoMEMta to be able to compute the integral. 
+When the integration is fully configured, i.e. the final module computing the integrand value is defined, the integrand has to be registered with MoMEMta to be able to compute the integral. 
 For instance, if the module called `final_module` with output `output` defines the integrand, one has to call:
 ```Lua
 integrand("final_module::output")
@@ -92,61 +92,4 @@ It is possible in MoMEMta to integrate multi-valued functions (caution: is only 
 ```Lua
 integrand("final_module_1::output", "final_module_2::output")
 ```
-
-## Define parameters <a name="parameters"></a>
-
-In MoMEMta, once the `ConfigurationReader` has been "frozen" to give a `Configuration` object, it is not possible anymore to modify anything in the integration. However, some parameters can be modified in the `ConfigurationReader` from the C++ code (allowing e.g. to carry out mass scans easily). In order to do that, the parameters have to be put in the `parameters` table in Lua:
-```Lua
-parameters = {
-  my_mass = 173.,
-  my_width = 2.5
-}
-```
-These parameters can then be linked with the modules' parameters using the `parameter()` Lua function:
-```Lua
-BreitWignerGenerator.m_prop = {
-  ps_point = add_dimension(),
-  mass = parameter('my_mass'), -- Access the value through the "parameter" function, allowing it to be modified from the C++ code
-  width = parameters.my_width -- Access the value as a regular Lua table. It will NOT be possible to modify it later on
-}
-```
-Changing `my_mass` from C++ before freezing the configuration is now possible using `ConfigurationReader::getGlobalParameters()`, see [calling momemta](calling-momemta).
-
-## Configure the integration algorithm
-
-The integration algorithm can be configured from within Lua using the `cuba` table, for instance:
-```Lua
-cuba = {
-  integration_algorithm = "divonne", -- default is "vegas"
-  relative_accuracy = 0.01
-}
-```
-Four different integration algorithms are available, and each has several parameters than can be tweaked to adjust the precision and convergence speed of the calculations. 
-For a full list of the available methods and corresponding options, please consult the documentation of the numerical integration library used in MoMEMta: Cuba[^1].
-
-The integration parameters can be changed from the C++ in a manner similar to the parameters in the previous section, using the method `ConfigurationReader::getCubaConfiguration()`.
-
-## Pass arguments to the configuration
-
-Once the `ConfigurationReader` has parsed the Lua configuration file, it is not possible anymore to change the resulting computation flow (the only changes possible are the above parameters). 
-It is however possible to pass arguments from C++ to the Lua script when it is read by the `ConfigurationReader`, to influence its execution. 
-
-Defining the arguments in C++:
-```cpp
-ParameterSet lua_parameters;
-lua_parameters.set("text1", "hello, world!");
-lua_parameters.set("text2", "always look on the bright side of life!");
-lua_parameters.set("question", true);
-ConfigurationReader configuration("example.lua", lua_parameters);
-```
-Makes them available in Lua, i.e.:
-```Lua
-if question then
-  print(test1)
-else
-  print(test2)
-end
-```
-Would print "hello, world!".
-
-[^1]: [T. Hahn, *"Cuba - a library for multidimensional numerical integration"*](https://arxiv.org/abs/hep-ph/0404043)
+In this case, `computeWeights()` would return a vector with two entries, embedding the value of the integral and the corresponding uncertainty for each of the two components.

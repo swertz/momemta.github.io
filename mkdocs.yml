@@ -57,6 +57,7 @@ pages:
   - 'In depth':
     - 'Calling MoMEMta': 'in-depth/calling-momemta.md'
     - 'Configuration file': 'in-depth/configuration-file.md'
+    - 'Parameters': 'in-depth/parameters.md'
     - 'Validation': 'in-depth/validation.md'
   - 'Release notes': 'changelog.md'
   #- 'Acknowledgements': 'acknowledgement.md'
