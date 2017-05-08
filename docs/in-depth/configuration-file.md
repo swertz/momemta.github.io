@@ -53,16 +53,20 @@ A full list of modules available out-of-the-box, along with documentation about 
 
 ## Declaring input particles
 
-Particles passed as input to the `computeWeights()` function (see [Calling MoMEMta](calling-momemta)) can be linked with the modules by registering them in the Lua configuration. For instance, for a particle declared in C++ as `momemta::Particle m_part1 { "part1", p1, 0 }`, one would do:
+Input particles are declared in the configuration file as:
 ```Lua
-local l_part1 = declare_input("part1") -- Pass as argument the name string of m_part1
+local l_part1 = declare_input("part1") -- Give that input a name: "part1"
 ```
-The Lua object `l_part1` now contains the input tag needed to access the particle's 4-vector. For instance, defining a transfer function on the energy of `part1` can be done as:
+
+In C++, that input's 4-vector can then be passed through the `computeWeights()` function (see [Calling MoMEMta](calling-momemta)) by defining a `momemta::Particle` object whose name attribute is the same as the one used in the configuration, e.g. `momemta::Particle m_part1 { "part1", p1, 0 }`.
+
+The Lua object `l_part1` contains the input tag needed to access the particle's 4-vector. For instance, defining a transfer function on the energy of `part1` can be done as:
 ```Lua
 GaussianTransferFunctionOnEnergy.tf_part1 = {
   ps_point = add_dimension(), -- A transfer function integrates over a variable (the particle's energy), so we need a new dimension in the integrated volume
-  reco_particle = l_part1.reco_p4, -- Pass the input tag corresponding to the experimentally reconstructed 4-vector of the particle, passed to 'computeWeights()'
-  sigma = 0.10 -- Take 10% resolution on the energy
+  reco_particle = l_part1.reco_p4, -- Pass the input tag corresponding to the experimentally reconstructed 4-vector of the particle, given to 'computeWeights()'
+  sigma = 0.10, -- Take 10% resolution on the energy
+  sigma_range = 5 -- Integrate from -5*sigma*E to +5*sigma*E
 }
 ```
 Since the transfer function integrates over the particle's energy, it generates new values for its energy. This defines a new, 'parton'-level 4-vector for `part1`, which can now be passed e.g. to a matrix element. In this example, the parton-level 4-vector can be accessed directly through the `tf_part1::output` input tag. It is also possible to register it with the `l_part1` object:
@@ -74,11 +78,10 @@ When declaring further modules, instead of using `tf_part1::output`, it is now p
 P4Printer.printer1 = { input = "tf_part1::output" }
 P4Printer.printer2 = { input = l_part1.gen_p4 }
 ```
+!!! note
+    If the function `set_gen_p4()` is not called, one has by default `l_part1.gen_p4 = l_part1.reco_p4`. For instance, if you don't use transfer functions there is no distinction needed between 'parton'- and 'reco'-level quantities.
 
-Finally, the missing transverse energy 4-vector (passed optionally to `computeWeights()`) can either be accessed directly through the `met::p4` input tag, or declared as a Lua object as above:
-```Lua
-local met = declare_input("met")
-```
+The missing transverse energy 4-vector (passed optionally to `computeWeights()`) can be accessed directly through the `met::p4` input tag.
 
 ## Declaring the integrand
 

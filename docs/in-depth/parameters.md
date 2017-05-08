@@ -16,6 +16,8 @@ BreitWignerGenerator.m_prop = {
 }
 ```
 Changing `my_mass` from C++ before freezing the configuration is now possible using `ConfigurationReader::getGlobalParameters()`, see [calling momemta](calling-momemta).
+!!! danger
+    Accessing the parameter entries directly, as `parameters.my_width` or `parameters['my_width']`, makes it impossible to modify them from the C++ code. The latter is only possible when using the `parameter()` function.
 
 ## Configuring the integration algorithm
 
@@ -27,7 +29,7 @@ cuba = {
 }
 ```
 Four different integration algorithms are available, and each has several parameters than can be tweaked to adjust their behaviour, tweak the precision of the calculations, ...
-The integration parameters can be changed from the C++ in a manner similar to the "global" parameters (previous section), using the method `ConfigurationReader::getCubaConfiguration()`.
+The integration parameters can be changed from the C++ in a manner similar to the "global" parameters (see [previous section](parameters#defining-parameters)), using the method `ConfigurationReader::getCubaConfiguration()`.
 The available algorithms and corresponding options are briefly listed here; for a full description, please consult the documentation of the numerical integration library used in MoMEMta: Cuba[^1]. 
 
 Bear in mind the default values for these parameters are not guaranteed to be optimal for your particular case! It's your job to ensure the algorithm is tweaked to work well for the events and the functions you'll be integrating.
@@ -47,7 +49,7 @@ Common arguments:
 | `seed` | integers | `0` |
 | `min_eval` | integers | `0` |
 | `max_eval` | integers | `500000` |
-| `grid_file` | paths | `` |
+| `grid_file` | paths |  |
 | `verbosity` | integers | `0` |
 | `subregion` | booleans | `false` |
 | `retainStateFile` | booleans | `false` |
