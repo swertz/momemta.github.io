@@ -54,7 +54,7 @@ The function `computeWeights()` starts the Monte-Carlo integration: the integran
 
 Calling MoMEMta from python is also possible, provided the python bindings have been built (see the [build options](../getting-started.md#build-options)). If you have not installed MoMEMta system-wide but in a user-defined directory (say `MOMEMTA_DIR`), you should make sure the two following conditions are satisfied:
 
-  * `$MOMEMTA_DIR/lib[64]/pythonX/site-packages/` should be in your `PYTHONPATH` (exact path depends on your system)
+  * `$MOMEMTA_DIR/lib[64]/pythonX/site-packages/` (exact path depends on your system) should be in your `PYTHONPATH`
   * `$MOMEMTA_DIR/lib/` should be in your `LD_LIBRARY_PATH`
 
 Then, you might call MoMEMta from your python analysis script in this manner:

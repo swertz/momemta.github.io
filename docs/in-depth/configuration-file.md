@@ -60,7 +60,7 @@ local l_part1 = declare_input("part1") -- Give that input a name: "part1"
 
 In C++, that input's 4-vector can then be passed through the `computeWeights()` function (see [Calling MoMEMta](calling-momemta)) by defining a `momemta::Particle` object whose name attribute is the same as the one used in the configuration, e.g. `momemta::Particle m_part1 { "part1", p1, 0 }`.
 
-The Lua object `l_part1` contains the input tag needed to access the particle's 4-vector. For instance, defining a transfer function on the energy of `part1` can be done as:
+The Lua object `l_part1`, via the `reco_p4` attribute, contains the input tag needed to access the particle's 4-vector. For instance, defining a transfer function on the energy of `part1` can be done as:
 ```Lua
 GaussianTransferFunctionOnEnergy.tf_part1 = {
   ps_point = add_dimension(), -- A transfer function integrates over a variable (the particle's energy), so we need a new dimension in the integrated volume
