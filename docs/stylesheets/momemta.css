@@ -1,0 +1,4 @@
+/* Word-wrap for code blocks */
+.codehilite pre {
+  white-space: pre-wrap;
+}

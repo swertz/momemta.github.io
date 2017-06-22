@@ -49,6 +49,7 @@ extra_javascript:
 
 extra_css:
   - 'stylesheets/base16-eighties.dark.css'
+  - 'stylesheets/momemta.css'
 
 pages:
   - The MoMEMta project: index.md
@@ -58,6 +59,7 @@ pages:
     - 'Calling MoMEMta': 'in-depth/calling-momemta.md'
     - 'Configuration file': 'in-depth/configuration-file.md'
     - 'Parameters': 'in-depth/parameters.md'
+    - 'Adding a new module': 'in-depth/new-module.md'
     - 'Validation': 'in-depth/validation.md'
   - 'Release notes': 'changelog.md'
   #- 'Acknowledgements': 'acknowledgement.md'
