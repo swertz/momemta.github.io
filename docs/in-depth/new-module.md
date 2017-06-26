@@ -97,7 +97,7 @@ private: Value
 
 ````
 
-The first addition grab an input of type `double` from the memory pool, expected to be produced by a module named `module` and called `output` (remember that the _output_ of a module becomes the _input_ of another module). The second addition print the actual value of the input at each integration step. In order to access the value of the input, you must dereference the variable (`Value` actually acts as a pointer to the real value, so you can also use the arrow (`->`) operator).
+The first addition grabs an input of type `double` from the memory pool, expected to be produced by a module named `module` and called `output` (remember that the _output_ of a module becomes the _input_ of another module). The second addition prints the actual value of the input at each integration step. In order to access the value of the input, you must dereference the variable (`Value` actually acts as a pointer to the real value, so you can also use the arrow (`->`) operator).
 
 Outputs (values produced by the module) are declared in a similar way. The `Module` class has a method called `produce` you can use to register an output. It accepts a single argument which is the name of the output. A module can register any numbers of outputs, but they all must have a unique name.
 
@@ -131,7 +131,7 @@ private:
 };
 ```
 
-First addition register an output named `my_output` for this module, of type `double`. The second addition set the value of the output to be twice the input value.
+First addition registers an output named `my_output` for this module, of type `double`. The second addition sets the value of the output to be twice the input value.
 
 ### Parameters
 
@@ -142,7 +142,7 @@ Parameters are stored into a [`ParameterSet`](https://momemta.github.io/MoMEMta/
 !!! note
     Only a subset of types are supported by `ParameterSet`. You can only store and retrieve `int64_t` (integers), `double` (floating point numbers), `bool`, `std::string`, `InputTag`, `ParameterSet`, as well as `std::vector` of any of the previous types.
 
-We will modify our module to remove the hardcoded `InputTag` and except the user to pass it as a parameter:
+We will modify our module to remove the hardcoded `InputTag` and require the user to pass it as a parameter:
 
 ```C++ hl_lines="4 5"
 class HelloWorldModule: public Module {
