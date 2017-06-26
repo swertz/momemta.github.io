@@ -190,3 +190,84 @@ HelloWorldModule.hello = {
     You can use the `exists` method of `ParameterSet` to check if a given parameter exists.
 
 ### Module registration
+
+When using inputs, outputs or parameters in your modules, extra steps are needed during the registration to inform the system what are your module expectations.
+
+```c++
+REGISTER_MODULE(HelloWorldModule)
+    .Input("which_input")
+    .Output("output");
+```
+
+The above declaration informs the system that your module has one input (`which_input`) and one output (`output`). MoMEMta now expects the user to specify a value for `which_input` when writing the configuration file, and, more specifically, this value must be an `InputTag`.
+
+#### Attributes
+
+Attributes are any parameters which are not inputs. They are used to pass parameters to the module, like for example the current center of mass energy, or the mass of a particle.
+
+You define an attribute when you register the module, by specifying its name and type using the `Attr` or `OptionalAttr` methods, which expect a spec of the form:
+
+```
+<name>: <type-expr> = <default>
+```
+
+where `<name>` begins with a letter and can be composed of alphanumeric characters and underscores, and `<type-expr> `is a type expression of the form [described below](new-module.md#supported-types). An optional `<default>` value can also be specified. If it's the case, the attribute is automatically marked as optional.
+
+Let's imagine our module needs to know what's the mass of the top quark to work. We need to add a new attribute of type `double`:
+
+```c++
+REGISTER_MODULE(HelloWorldModule)
+    .Attr("mass: double")
+    .Input("which_input")
+    .Output("output");
+```
+
+##### Supported types
+
+The following types are supported when registering a new attribute:
+
+  - `int`: signed 64-bits integer
+  - `double`: 64-bits floating point number
+  - `string`: sequence of characters
+  - `bool`: true or false
+  - `pset`: a ParameterSet
+  - `list(<type>)`: a list of any of the types above.
+
+!!! warning
+    An `InputTag` attribute is an *input*, not an attribute. As a consequence, `InputTag` is **not** a valid type for an attribute.
+
+!!! danger
+    No check is currently performed to ensure only valid types are passed as attributes in the configuration file. Full support is planned for future release.
+
+#### Inputs and outputs
+
+Inputs and outputs are untyped. To register inputs, you can use the `Input`, `Inputs`, `OptionalInput` and `OptionalInputs` methods. For an output, use the `Output` method. These methods expect a spec of the form:
+
+```
+[<attr>/]*<name>
+```
+
+`<name>` begins with a letter and can be composed of alphanumeric characters and underscores. In the case of inputs only, you can also describe where the `InputTag` must be fetched using `<attr>`. `<attr>` must refer to an existing attribute (defined with the `Attr` method) of type `pset`. More than one level of nesting is possible.
+
+Here's an example illustrating this feature:
+
+```c++ hl_lines="3 5"
+REGISTER_MODULE(HelloWorldModule)
+    .Attr("mass: double")
+    .Attr("data: pset")
+    .Input("first_input")
+    .Input("data/second_input")
+    .Output("output");
+```
+
+This imaginary module needs two inputs: `first_input` will be fetched from the main parameters, while `second_input` will be fetched from the `data` attribute. You can configure such module the following way:
+
+```lua
+HelloWorldModule.hello = {
+  mass = 173.0,
+  data = {
+    second_input = "module::second_output"
+  },
+  first_input = "module::first_output"
+}
+```
