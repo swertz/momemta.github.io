@@ -241,7 +241,7 @@ The following types are supported when registering a new attribute:
 
 #### Inputs and outputs
 
-Inputs and outputs are untyped. To register inputs, you can use the `Input`, `Inputs`, `OptionalInput` and `OptionalInputs` methods. For an output, use the `Output` method. These methods expect a spec of the form:
+Inputs and outputs are untyped. To register inputs, you can use the `Input` method. For an output, use the `Output` method. These methods expect a spec of the form:
 
 ```
 [<attr>/]*<name>
@@ -271,3 +271,7 @@ HelloWorldModule.hello = {
   first_input = "module::first_output"
 }
 ```
+
+## More
+
+The sources of the built-in modules are a good source of documentation too. Those can be found [on our github repository](https://github.com/MoMEMta/MoMEMta/tree/master/modules)
