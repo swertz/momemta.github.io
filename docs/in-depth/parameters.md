@@ -19,6 +19,14 @@ Changing `my_mass` from C++ before freezing the configuration is now possible us
 !!! danger
     Accessing the parameter entries directly, as `parameters.my_width` or `parameters['my_width']`, makes it impossible to modify them from the C++ code. The latter is only possible when using the `parameter()` function.
 
+### List of existing parameters
+
+In addition to parameters accessible to modules, some parameters are read directly by MoMEMta and can influence its behavior. You can find the full list below:
+
+| Parameter | Allowed values | Default value | Description |
+| --------- | -------------- | ------------- | ----------- |
+| `export_graph_as` | Any file name | None | Set this parameter to any value to export the computation graph built by MoMEMta. This is useful to visually see how your weight is computed. |
+
 ## Configuring the integration algorithm
 
 The integration algorithm can be configured from within Lua using the `cuba` table, for instance:

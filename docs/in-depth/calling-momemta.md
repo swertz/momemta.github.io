@@ -1,9 +1,7 @@
 In MoMEMta, the integration is defined by linking modules together in a Lua script. MoMEMta is shipped with a set of modules covering the most common needs and whose parameters, inputs and outputs are documented [here](https://momemta.github.io/MoMEMta/dev/group__modules.html). For more information on how to write the configuration file, see [here](configuration-file.md).
 
 !!! note
-    A module is just a C++ class deriving from the `Module` virtual class.
-
-[//]: # ( How to write a new module and make it available for the calculation is described (here). )
+    A module is just a C++ class deriving from the `Module` virtual class. You can learn more on how to create your own module and make it available for the calculation [here](new-module.md)
 
 Once the configuration file is defined, it can be loaded by MoMEMta’s configuration reader:
 ```cpp
