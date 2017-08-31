@@ -10,7 +10,7 @@ google_analytics: ['UA-78443359-1', 'momemta.github.io']
 copyright: 'Copyright &copy; 2016 - 2017 the MoMEMta team'
 
 extra:
-  version: 'v0.2.0'
+  version: 'v1.0.0-beta.1'
   logo: 'images/logo.svg'
   palette:
     primary: 'blue grey'
