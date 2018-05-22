@@ -7,10 +7,10 @@ site_dir: _site
 google_analytics: ['UA-78443359-1', 'momemta.github.io']
 
 # Copyright
-copyright: 'Copyright &copy; 2016 - 2017 the MoMEMta team'
+copyright: 'Copyright &copy; 2016 - 2018 the MoMEMta team'
 
 extra:
-  version: 'v1.0.0-beta.1'
+  version: 'v1.0.0'
   logo: 'images/logo.svg'
   palette:
     primary: 'blue grey'

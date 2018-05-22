@@ -11,7 +11,7 @@ MoMEMta is based on:
  - External PDFs ([LHAPDF](http://lhapdf.hepforge.org/) by default)
  - External Matrix Elements (currently provided by our MadGraph C++ [exporter plugin](https://github.com/MoMEMta/MoMEMta-MaGMEE))
 
-You will probably want to start with our [getting started guide](getting-started.md).
+You will probably want to start with our [getting started guide](getting-started.md), or check out our set of [working examples](https://github.com/MoMEMta/Tutorials).
 
 ## Our team
 
