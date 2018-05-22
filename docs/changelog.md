@@ -1,3 +1,17 @@
+## [1.0.0] - 2018-05-22
+### Added
+ - Interface to evaluate the integrand on a phase-space point (`MoMEMta::setEvent` and `MoMEMta::evaluateIntegrand` functions).
+ - Support for python3 - new build options as a consequence: `PYTHON_MIN_VERSION` and `Boost_PYTHON_VERSION_TAG`.
+
+### Changed
+ - Minimum CMake version is now 3.4.0.
+
+### Fixed
+ - Build on systems where default compiler standard is C++14 (fixed conflict with ROOT enforcing the use of exactly the same standard as the one it was built with).
+ - Problem in some module definitions (BinnedTransferFunctionOnEnergy, BinnedTransferFunctionOnPt, BlockB, BlockD): outputs and attributes did not correspond with module registry.
+ - Bug in graph creation, visible only when several instances of MoMEMta were created.
+ - LHAPDF could not be found in a CMSSW environment (`lhapdf-config` not available)
+
 ## [1.0.0 beta 1] - 2017-31-08
 ### Added
  - New `Looper` module to loop over a set of solutions (see below for more details)
@@ -38,7 +52,6 @@
  - SLHA card reader (matrix element parameter cards) retrieved from MadGraph was broken.
  - Transfer functions on energy take as lower bound the mass of the given "reco" particle
 
-## v0.1.0
- - First public release of MoMEMta. Only $t\bar{t}$ and $W^+W^-$ fully-leptonic matrix elements are included in this release.
 
+[1.0.0]: https://github.com/MoMEMta/MoMEMta/compare/v1.0.0-beta.1...v1.0.0
 [1.0.0 beta 1]: https://github.com/MoMEMta/MoMEMta/compare/v0.1.0...v1.0.0-beta.1
