@@ -32,7 +32,7 @@
 
         <!-- Link to previous page -->
         {% if page.previous_page %}
-          <a href="{{ page.previous_page.url }}"
+          <a href="{{ page.previous_page.url | url }}"
               title="{{ page.previous_page.title }}"
               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
               rel="prev">
@@ -54,7 +54,8 @@
 
         <!-- Link to next page -->
         {% if page.next_page %}
-          <a href="{{ page.next_page.url }}" title="{{ page.next_page.title }}"
+          <a href="{{ page.next_page.url | url }}"
+              title="{{ page.next_page.title }}"
               class="md-flex md-footer-nav__link md-footer-nav__link--next"
               rel="next">
             <div class="md-flex__cell md-flex__cell--stretch
@@ -87,12 +88,13 @@
             {{ config.copyright }}
           </div>
         {% endif %}
-	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
-<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The MoMEMta project website</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-	<br/>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+        </a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The MoMEMta project website</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        <br/>
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>

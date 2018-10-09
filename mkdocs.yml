@@ -2,7 +2,6 @@ site_name: MoMEMta
 site_description: 'Modular Matrix Element Method implementation'
 site_author: 'The MoMEMta team'
 site_url: 'https://momemta.github.io'
-site_favicon: favicon.png
 site_dir: _site
 google_analytics: ['UA-78443359-1', 'momemta.github.io']
 
@@ -11,10 +10,6 @@ copyright: 'Copyright &copy; 2016 - 2018 the MoMEMta team'
 
 extra:
   version: 'v1.0.0'
-  logo: 'images/logo.svg'
-  palette:
-    primary: 'blue grey'
-    accent: 'teal'
   social:
     - type: 'envelope'
       link: 'mailto:momemta-contact@cern.ch'
@@ -30,16 +25,23 @@ repo_name: 'GitHub'
 repo_url: 'https://github.com/MoMEMta/MoMEMta'
 edit_uri: null
 
-theme: 'material'
-theme_dir: 'theme'
+theme:
+    name: 'material'
+    custom_dir: 'theme'
+    logo: 'images/logo.svg'
+    palette:
+        primary: 'blue grey'
+        accent: 'teal'
 
 # Extensions
 markdown_extensions:
   - codehilite
+      #pygments_style: base16-eighties.dark
   - admonition
   - mdx_math:
       enable_dollar_delimiter: true
-  - toc(permalink=true)
+  - toc:
+      permalink: true
   - footnotes
   - meta
 
@@ -51,7 +53,7 @@ extra_css:
   - 'stylesheets/base16-eighties.dark.css'
   - 'stylesheets/momemta.css'
 
-pages:
+nav:
   - The MoMEMta project: index.md
   - What is MoMEMta?: introduction.md
   - Getting started: 'getting-started.md'
